@@ -1,16 +1,17 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Layout } from '../components/layout/layout';
 import './styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to frontend!</title>
+        <title>gdate</title>
       </Head>
-      <main className="app">
+      <Layout>
         <Component {...pageProps} />
-      </main>
+      </Layout>
     </>
   );
 }

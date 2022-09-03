@@ -10,6 +10,7 @@
   "private": true,
   "dependencies": {
     "@nrwl/next": "14.5.10",
+    "@testing-library/jest-dom": "^5.16.5",
     "core-js": "^3.6.5",
     "next": "12.2.3",
     "react": "18.2.0",
