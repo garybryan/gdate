@@ -1,12 +1,12 @@
 import CheckboxesField  from '../checkboxes-field/checkboxes-field';
-import ChoiceField, { ChoiceFieldChoices } from '../choice-field/choice-field';
+import ChoiceField  from '../choice-field/choice-field';
 import styles from './onboarding-form.module.css';
 
-const interestedInChoices: ChoiceFieldChoices = [
-  ["men", "Men"],
-  ["women", "Women"],
-  ["anybody", "Everybody"],
-  ["followers", "Instagram followers"],
+const interestedInChoices = [
+  "Men",
+  "Women",
+  "Everybody",
+  "Instagram followers",
 ]
 
 const interestsChoices = [
@@ -15,9 +15,9 @@ const interestsChoices = [
   "Adventures",
 ]
 
-const pineappleChoices: ChoiceFieldChoices = [
-  ["yes", "Love it! 🍍🍕🤤"],
-  ["no", "No way! 🍍🍕🤮"],
+const pineappleChoices = [
+  "Love it! 🍍🍕🤤",
+  "No way! 🍍🍕🤮",
 ]
 
 

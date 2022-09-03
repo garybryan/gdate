@@ -1,13 +1,10 @@
 import { render, screen } from '@testing-library/react';
 
-import ChoiceField, { ChoiceFieldChoices } from './choice-field';
+import ChoiceField  from './choice-field';
 
 describe('ChoiceField', () => {
-  const label = "Give an answer";
-  const choices: ChoiceFieldChoices = [
-    ["yes", "Aye"],
-    ["no", "Naw"],
-  ];
+  const label = "Geez an answer";
+  const choices = ["Aye", "Naw"];
 
   beforeEach(() => render(<ChoiceField label={label} choices={choices} />));
 
@@ -16,9 +13,9 @@ describe('ChoiceField', () => {
   });
 
   it('renders choices', () => {
-    choices.forEach(([value, choiceLabel]) => {
+    choices.forEach((value) => {
       expect(screen.getByDisplayValue(value)).toBeInTheDocument();
-      expect(screen.getByLabelText(choiceLabel)).toBeInTheDocument();
+      expect(screen.getByLabelText(value)).toBeInTheDocument();
     });
   });
 });

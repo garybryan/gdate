@@ -8,11 +8,9 @@ import FormLabel from '@mui/material/FormLabel';
 
 import styles from './choice-field.module.css';
 
-export type ChoiceFieldChoices = Array<[string, string]>;
-
 interface ChoiceFieldProps {
   label: string,
-  choices: ChoiceFieldChoices
+  choices: string[]
 }
 
 export function ChoiceField({ label, choices }: ChoiceFieldProps) {
@@ -27,8 +25,8 @@ export function ChoiceField({ label, choices }: ChoiceFieldProps) {
           defaultValue="women"
           name="radio-buttons-group"
         >
-          {choices.map(([value, choiceLabel]) => 
-            <FormControlLabel key={value} value={value} control={<Radio />} label={choiceLabel} />
+          {choices.map((value) => 
+            <FormControlLabel key={value} value={value} control={<Radio />} label={value} />
           )}
         </RadioGroup>
       </FormControl>
