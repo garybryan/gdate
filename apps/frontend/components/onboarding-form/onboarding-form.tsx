@@ -1,4 +1,4 @@
-import CheckboxesField from '../checkboxes-field/checkboxes-field';
+import MultipleChoicesField from '../multiple-choices-field/multiple-choices-field';
 import ChoiceField from '../choice-field/choice-field';
 import styles from './onboarding-form.module.css';
 
@@ -21,7 +21,7 @@ export function OnboardingForm() {
   return (
     <div className={styles['container']}>
       <ChoiceField label="I'm interested in:" choices={interestedInChoices} />
-      <CheckboxesField label="I'm into:" choices={interestsChoices} />
+      <MultipleChoicesField label="I'm into:" choices={interestsChoices} />
       <ChoiceField
         label="Does pineapple belong on pizza?"
         choices={pineappleChoices}

@@ -6,14 +6,14 @@ import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import FormLabel from '@mui/material/FormLabel';
 
-import styles from './checkboxes-field.module.css';
+import styles from './multiple-choices-field.module.css';
 
-interface CheckboxesFieldProps {
+interface MultipleChoicesFieldProps {
   label: string;
   choices: string[];
 }
 
-export function CheckboxesField({ label, choices }: CheckboxesFieldProps) {
+export function MultipleChoicesField({ label, choices }: MultipleChoicesFieldProps) {
   const id = useId();
 
   return (
@@ -38,4 +38,4 @@ export function CheckboxesField({ label, choices }: CheckboxesFieldProps) {
   );
 }
 
-export default CheckboxesField;
+export default MultipleChoicesField;
