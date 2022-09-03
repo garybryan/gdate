@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+
 import MultipleChoiceField from '../multiple-choice-field/multiple-choice-field';
 import SingleChoiceField from '../single-choice-field/single-choice-field';
 
@@ -21,31 +23,40 @@ const interestsChoices = [
 const pineappleChoices = ['Love it! 🍍🍕🤤', 'No way! 🍍🍕🤮'];
 
 export function OnboardingForm() {
+  const { push } = useRouter();
+
+  const onSubmit = (event: React.SyntheticEvent) => {
+    event.preventDefault();
+    push('/swipe');
+  };
+
   return (
-    <div>
-      <SingleChoiceField
-        label="I'm interested in:"
-        choices={interestedInChoices}
-      />
+    <section>
+      <form onSubmit={onSubmit}>
+        <SingleChoiceField
+          label="I'm interested in:"
+          choices={interestedInChoices}
+        />
 
-      <MultipleChoiceField label="I'm into:" choices={interestsChoices} />
+        <MultipleChoiceField label="I'm into:" choices={interestsChoices} />
 
-      <SingleChoiceField
-        label="Does pineapple belong on pizza?"
-        choices={pineappleChoices}
-      />
+        <SingleChoiceField
+          label="Does pineapple belong on pizza?"
+          choices={pineappleChoices}
+        />
 
-      <div className={styles['buttonContainer']}>
-        <SexyButton
-          variant="contained"
-          size="large"
-          className={styles['signupButton']}
-          type="submit"
-        >
-          Sign me up!
-        </SexyButton>
-      </div>
-    </div>
+        <div className={styles['buttonContainer']}>
+          <SexyButton
+            variant="contained"
+            size="large"
+            className={styles['signupButton']}
+            type="submit"
+          >
+            Sign me up!
+          </SexyButton>
+        </div>
+      </form>
+    </section>
   );
 }
 
