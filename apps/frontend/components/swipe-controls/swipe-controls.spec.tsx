@@ -7,21 +7,21 @@ describe('SwipeControls', () => {
     render(<SwipeControls />);
   });
 
-  it('renders no button', () => {
+  it('renders reject button', () => {
     expect(
-      screen.getByRole('button', {name: 'No'})
+      screen.getByLabelText('Reject')
     ).toBeInTheDocument();
   });
 
-  it('renders yes button', () => {
+  it('renders like button', () => {
     expect(
-      screen.getByRole('button', {name: 'No'})
+      screen.getByLabelText('Like')
     ).toBeInTheDocument();
   });
 
   it('renders super-like button', () => {
     expect(
-      screen.getByRole('button', {name: 'Super'})
+      screen.getByLabelText('SuperLike')
     ).toBeInTheDocument();
   });
 });
