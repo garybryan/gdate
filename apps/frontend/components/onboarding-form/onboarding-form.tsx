@@ -1,5 +1,5 @@
-import MultipleChoicesField from '../multiple-choices-field/multiple-choices-field';
-import ChoiceField from '../choice-field/choice-field';
+import MultipleChoiceField from '../multiple-choice-field/multiple-choice-field';
+import SingleChoiceField from '../single-choice-field/single-choice-field';
 import styles from './onboarding-form.module.css';
 
 const interestedInChoices = [
@@ -20,9 +20,12 @@ const pineappleChoices = ['Love it! 🍍🍕🤤', 'No way! 🍍🍕🤮'];
 export function OnboardingForm() {
   return (
     <div className={styles['container']}>
-      <ChoiceField label="I'm interested in:" choices={interestedInChoices} />
-      <MultipleChoicesField label="I'm into:" choices={interestsChoices} />
-      <ChoiceField
+      <SingleChoiceField
+        label="I'm interested in:"
+        choices={interestedInChoices}
+      />
+      <MultipleChoiceField label="I'm into:" choices={interestsChoices} />
+      <SingleChoiceField
         label="Does pineapple belong on pizza?"
         choices={pineappleChoices}
       />

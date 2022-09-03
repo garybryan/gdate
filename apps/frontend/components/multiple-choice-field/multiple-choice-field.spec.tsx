@@ -1,18 +1,20 @@
 import { render, screen } from '@testing-library/react';
 
-import MultipleChoicesField from './multiple-choices-field';
+import MultipleChoiceField from './multiple-choice-field';
 
-describe('ChoiceField', () => {
+describe('MultipleChoiceField', () => {
   const label = 'When?';
   const choices = ['Today', 'Tomorrow'];
 
-  beforeEach(() => render(<MultipleChoicesField label={label} choices={choices} />));
+  beforeEach(() =>
+    render(<MultipleChoiceField label={label} choices={choices} />)
+  );
 
   it('renders label', () => {
     expect(screen.getByLabelText(label)).toBeInTheDocument();
   });
 
-  it('renders choices', () => {
+  it('renders choice fields', () => {
     choices.forEach((value) => {
       expect(screen.getByDisplayValue(value)).toBeInTheDocument();
       expect(screen.getByLabelText(value)).toBeInTheDocument();

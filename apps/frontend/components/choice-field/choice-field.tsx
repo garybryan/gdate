@@ -1,19 +1,26 @@
 import { useId } from 'react';
 
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
 import styles from './choice-field.module.css';
 
-interface ChoiceFieldProps {
+type Choices = string[];
+
+export interface BaseChoiceFieldProps {
   label: string;
-  choices: string[];
+  choices: Choices;
 }
 
-export function ChoiceField({ label, choices }: ChoiceFieldProps) {
+type ChoiceFieldProps = BaseChoiceFieldProps & {
+  renderChoices: (choices: Choices, labelId: string) => React.ReactNode;
+};
+
+export function ChoiceField({
+  label,
+  choices,
+  renderChoices,
+}: ChoiceFieldProps) {
   const id = useId();
 
   return (
@@ -22,20 +29,7 @@ export function ChoiceField({ label, choices }: ChoiceFieldProps) {
         <FormLabel id={id} className={styles['form-label']}>
           {label}
         </FormLabel>
-        <RadioGroup
-          aria-labelledby={id}
-          defaultValue="women"
-          name="radio-buttons-group"
-        >
-          {choices.map((value) => (
-            <FormControlLabel
-              key={value}
-              value={value}
-              control={<Radio />}
-              label={value}
-            />
-          ))}
-        </RadioGroup>
+        {renderChoices(choices, id)}
       </FormControl>
     </div>
   );
