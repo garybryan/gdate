@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Layout } from '../components/layout/layout';
 import './styles.css';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+export default function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -16,4 +16,3 @@ function CustomApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default CustomApp;

@@ -7,10 +7,10 @@ export interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <div className={styles['container']}>
-      <header>
+      <header className={styles['header']}>
         <h1>gdate</h1>
       </header>
-      <main>
+      <main className={styles['main']}>
         {children}
       </main>
     </div>
