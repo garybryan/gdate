@@ -1,3 +1,4 @@
+import SwipeControls from '../../components/swipe-controls/swipe-controls';
 import SwipeProfile from '../../components/swipe-profile/swipe-profile';
 
 import styles from './index.module.css';
@@ -12,6 +13,7 @@ export function Swipe() {
   return (
     <div className={styles['container']}>
       <SwipeProfile profile={TEST_PROFILE} />
+      <SwipeControls />
     </div>
   );
 }

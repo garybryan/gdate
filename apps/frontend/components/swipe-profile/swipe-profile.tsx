@@ -13,7 +13,6 @@ export function SwipeProfile({
 }: SwipeProfileProps) {
   return (
     <section className={styles['container']}>
-      <div className={styles['photoContainer']}>
         <Image
           alt={`Photo of ${name}`}
           src={`/profile-photos/${photo}`}
@@ -23,8 +22,6 @@ export function SwipeProfile({
         <h2 className={styles['details']}>
           {name}, {age}
         </h2>
-      </div>
-
     </section>
   );
 }
