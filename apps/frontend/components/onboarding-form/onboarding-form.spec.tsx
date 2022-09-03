@@ -5,7 +5,7 @@ import OnboardingForm from './onboarding-form';
 describe('OnboardingForm', () => {
   beforeEach(() => render(<OnboardingForm />));
 
-  it('renders content', () => {
-    expect(screen.getByText('Form')).toBeInTheDocument();
+  it('renders interested in field', () => {
+    expect(screen.getByLabelText("I'm interested in:")).toBeInTheDocument();
   });
 });

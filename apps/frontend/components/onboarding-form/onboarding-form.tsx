@@ -1,12 +1,17 @@
+import ChoiceField, { Choices } from '../choice-field/choice-field';
 import styles from './onboarding-form.module.css';
 
-/* eslint-disable-next-line */
-export interface OnboardingFormProps {}
+const interestedInChoices: Choices = [
+  ["men", "Men"],
+  ["women", "Women"],
+  ["anybody", "Everybody"],
+  ["followers", "Instagram followers"],
+]
 
-export function OnboardingForm(props: OnboardingFormProps) {
+export function OnboardingForm() {
   return (
     <div className={styles['container']}>
-      <p>Form</p>
+      <ChoiceField label="I'm interested in:" choices={interestedInChoices} />
     </div>
   );
 }

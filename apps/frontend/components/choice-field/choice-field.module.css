@@ -1,0 +1,6 @@
+.form-label {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: #eb348c; /* TODO variables for colours */
+}
