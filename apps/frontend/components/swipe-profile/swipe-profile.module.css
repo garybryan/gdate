@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+.photoContainer {
+  flex-grow: 1;
+  position: relative;
+}
