@@ -1,13 +1,13 @@
-import Image from 'next/image';
-
 import styles from './swipe-controls.module.css';
+
+import SwipeButton from '../swipe-button/swipe-button';
 
 export function SwipeControls() {
   return (
     <section className={styles['container']}>
-      <button>No</button>
-      <button>Super</button>
-      <button>Yes</button>
+      <SwipeButton>No</SwipeButton>
+      <SwipeButton>Super</SwipeButton>
+      <SwipeButton>Yes</SwipeButton>
     </section>
   );
 }
