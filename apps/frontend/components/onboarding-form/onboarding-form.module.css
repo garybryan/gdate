@@ -1,7 +1,8 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+.buttonContainer {
+  padding-top: 0.6rem;
+  text-align: center;
+}
+
+.signupButton {
+  width: 80%;
+}
