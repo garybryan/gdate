@@ -8,4 +8,8 @@ describe('OnboardingForm', () => {
   it('renders interested in field', () => {
     expect(screen.getByLabelText("I'm interested in:")).toBeInTheDocument();
   });
+
+  it('renders pineapple field', () => {
+    expect(screen.getByLabelText("Does pineapple belong on pizza?")).toBeInTheDocument();
+  });
 });
