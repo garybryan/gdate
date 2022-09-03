@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 4rem;
+  width: 8vh;
+  height: 8vh;
   border-radius: 100%;
 }
