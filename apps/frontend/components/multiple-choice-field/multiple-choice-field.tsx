@@ -6,10 +6,7 @@ import ChoiceField, {
   BaseChoiceFieldProps,
 } from '../choice-field/choice-field';
 
-
-import styles from './multiple-choice-field.module.css';
-
-export function SingleChoiceField(props: BaseChoiceFieldProps) {
+export function MultipleChoiceField(props: BaseChoiceFieldProps) {
   return (
     <ChoiceField
       {...props}
@@ -30,4 +27,4 @@ export function SingleChoiceField(props: BaseChoiceFieldProps) {
   );
 }
 
-export default SingleChoiceField;
+export default MultipleChoiceField;

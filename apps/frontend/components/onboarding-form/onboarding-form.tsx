@@ -36,7 +36,14 @@ export function OnboardingForm() {
       />
 
       <div className={styles['buttonContainer']}>
-        <SexyButton variant="contained" size="large" className={styles['signupButton']}>Sign me up!</SexyButton>
+        <SexyButton
+          variant="contained"
+          size="large"
+          className={styles['signupButton']}
+          type="submit"
+        >
+          Sign me up!
+        </SexyButton>
       </div>
     </div>
   );
