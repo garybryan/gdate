@@ -1,12 +1,8 @@
 import Image from 'next/image';
 
-import styles from './swipe-profile.module.css';
+import { Profile } from '../../types/profile';
 
-interface Profile {
-  name: string;
-  photo: string;
-  age: number;
-}
+import styles from './swipe-profile.module.css';
 
 interface SwipeProfileProps {
   profile: Profile;
@@ -24,11 +20,11 @@ export function SwipeProfile({
           layout="fill"
           objectFit="contain"
         />
+        <h2 className={styles['details']}>
+          {name}, {age}
+        </h2>
       </div>
 
-      <h2 className={styles['details']}>
-        {name}, {age}
-      </h2>
     </section>
   );
 }
