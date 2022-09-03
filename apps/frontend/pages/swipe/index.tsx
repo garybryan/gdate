@@ -4,9 +4,9 @@ import SwipeProfile from '../../components/swipe-profile/swipe-profile';
 import styles from './index.module.css';
 
 const TEST_PROFILE = {
-  name: 'Gary',
-  photo: 'lambo.jpg',
-  age: 35,
+  name: 'Brad',
+  photo: 'brad.jpg',
+  age: 58,
 };
 
 export function Swipe() {
