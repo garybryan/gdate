@@ -3,7 +3,13 @@
   flex-direction: column;
   height: 80vh;
 }
+
 .photoContainer {
+  background-color: #224;
   flex-grow: 1;
   position: relative;
+}
+
+.details {
+  font-size: 3rem;
 }

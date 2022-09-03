@@ -4,13 +4,16 @@ import styles from './index.module.css';
 
 const TEST_PROFILE = {
   name: 'Gary',
-  photo: 'lambo.jpg'
-}
+  photo: 'lambo.jpg',
+  age: 35,
+};
 
 export function Swipe() {
-  return <div className={styles['container']}>
-    <SwipeProfile profile={TEST_PROFILE} />
-  </div>;
+  return (
+    <div className={styles['container']}>
+      <SwipeProfile profile={TEST_PROFILE} />
+    </div>
+  );
 }
 
 export default Swipe;
