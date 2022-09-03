@@ -1,5 +1,5 @@
-import OnboardingMessage from '../../components/onboarding-message/onboarding-message'
-import OnboardingForm from '../../components/onboarding-form/onboarding-form'
+import OnboardingMessage from '../../components/onboarding-message/onboarding-message';
+import OnboardingForm from '../../components/onboarding-form/onboarding-form';
 import styles from './index.module.css';
 
 /* eslint-disable-next-line */

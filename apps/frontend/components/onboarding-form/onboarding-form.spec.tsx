@@ -14,6 +14,8 @@ describe('OnboardingForm', () => {
   });
 
   it('renders pineapple field', () => {
-    expect(screen.getByLabelText("Does pineapple belong on pizza?")).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('Does pineapple belong on pizza?')
+    ).toBeInTheDocument();
   });
 });

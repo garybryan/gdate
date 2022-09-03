@@ -1,13 +1,10 @@
 import { render, screen } from '@testing-library/react';
 
-import CheckboxesField  from './checkboxes-field';
+import CheckboxesField from './checkboxes-field';
 
 describe('ChoiceField', () => {
-  const label = "When?";
-  const choices = [
-    "Today",
-    "Tomorrow"
-  ];
+  const label = 'When?';
+  const choices = ['Today', 'Tomorrow'];
 
   beforeEach(() => render(<CheckboxesField label={label} choices={choices} />));
 

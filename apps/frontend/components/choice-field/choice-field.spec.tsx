@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 
-import ChoiceField  from './choice-field';
+import ChoiceField from './choice-field';
 
 describe('ChoiceField', () => {
-  const label = "Geez an answer";
-  const choices = ["Aye", "Naw"];
+  const label = 'Geez an answer';
+  const choices = ['Aye', 'Naw'];
 
   beforeEach(() => render(<ChoiceField label={label} choices={choices} />));
 

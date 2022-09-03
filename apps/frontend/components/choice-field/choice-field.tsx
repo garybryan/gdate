@@ -9,8 +9,8 @@ import FormLabel from '@mui/material/FormLabel';
 import styles from './choice-field.module.css';
 
 interface ChoiceFieldProps {
-  label: string,
-  choices: string[]
+  label: string;
+  choices: string[];
 }
 
 export function ChoiceField({ label, choices }: ChoiceFieldProps) {
@@ -19,15 +19,22 @@ export function ChoiceField({ label, choices }: ChoiceFieldProps) {
   return (
     <div className={styles['container']}>
       <FormControl>
-        <FormLabel id={id} className={styles['form-label']}>{label}</FormLabel>
+        <FormLabel id={id} className={styles['form-label']}>
+          {label}
+        </FormLabel>
         <RadioGroup
           aria-labelledby={id}
           defaultValue="women"
           name="radio-buttons-group"
         >
-          {choices.map((value) => 
-            <FormControlLabel key={value} value={value} control={<Radio />} label={value} />
-          )}
+          {choices.map((value) => (
+            <FormControlLabel
+              key={value}
+              value={value}
+              control={<Radio />}
+              label={value}
+            />
+          ))}
         </RadioGroup>
       </FormControl>
     </div>

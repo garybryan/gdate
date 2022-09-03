@@ -1,7 +1,7 @@
 import styles from './layout.module.css';
 
 export interface LayoutProps {
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 export function Layout({ children }: LayoutProps) {
@@ -10,9 +10,7 @@ export function Layout({ children }: LayoutProps) {
       <header className={styles['header']}>
         <h1>gdate</h1>
       </header>
-      <main className={styles['main']}>
-        {children}
-      </main>
+      <main className={styles['main']}>{children}</main>
     </div>
   );
 }

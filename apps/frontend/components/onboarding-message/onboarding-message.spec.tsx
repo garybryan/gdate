@@ -6,6 +6,8 @@ describe('OnboardingMessage', () => {
   beforeEach(() => render(<OnboardingMessage />));
 
   it('renders welcome message', () => {
-    expect(screen.getByRole('heading', { name: 'Welcome!'})).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Welcome!' })
+    ).toBeInTheDocument();
   });
 });

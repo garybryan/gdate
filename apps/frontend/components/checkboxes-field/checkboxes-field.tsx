@@ -9,8 +9,8 @@ import FormLabel from '@mui/material/FormLabel';
 import styles from './checkboxes-field.module.css';
 
 interface CheckboxesFieldProps {
-  label: string,
-  choices: string[]
+  label: string;
+  choices: string[];
 }
 
 export function CheckboxesField({ label, choices }: CheckboxesFieldProps) {
@@ -19,11 +19,19 @@ export function CheckboxesField({ label, choices }: CheckboxesFieldProps) {
   return (
     <div className={styles['container']}>
       <FormControl>
-        <FormLabel id={id} className={styles['form-label']}>{label}</FormLabel>
+        <FormLabel id={id} className={styles['form-label']}>
+          {label}
+        </FormLabel>
         <FormGroup aria-labelledby={id}>
-          {choices.map((value) => 
-            <FormControlLabel key={value} value={value} control={<Checkbox />} label={value} checked={true} />
-          )}
+          {choices.map((value) => (
+            <FormControlLabel
+              key={value}
+              value={value}
+              control={<Checkbox />}
+              label={value}
+              checked={true}
+            />
+          ))}
         </FormGroup>
       </FormControl>
     </div>
