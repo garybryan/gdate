@@ -28,10 +28,10 @@ describe('OnboardingForm', () => {
     ).toBeInTheDocument();
   });
 
-  it('goes to swipe page on submit', async () => {
+  it('goes to registration page on submit', async () => {
     await userEvent.click(screen.getByText('Sign me up!'));
 
-    expect(mockPush).toHaveBeenCalledWith('/swipe');
+    expect(mockPush).toHaveBeenCalledWith('/registration');
     expect(mockPush).toHaveBeenCalledTimes(1);
   });
 });

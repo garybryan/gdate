@@ -27,7 +27,7 @@ export function OnboardingForm() {
 
   const onSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
-    push('/swipe');
+    push('/registration');
   };
 
   return (
