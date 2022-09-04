@@ -1,0 +1,40 @@
+.container {
+  --bubble-size: 0.7rem;
+  --bubble-color: var(--highlight-color);
+  background-color: var(--bubble-color);
+  color: var(--highlight-secondary-color);
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.5rem;
+  margin: 0 1rem;
+  position: relative;
+}
+
+.container:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: var(--bubble-size) solid transparent;
+  border-bottom: 0;
+  margin-top: calc(var(--bubble-size) / -2);
+}
+
+.container.fromCorrespondent:after {
+  left: 0;
+  border-right-color: var(--bubble-color);
+  border-left: 0;
+  margin-left: calc(var(--bubble-size) * -1 + 0.1rem);
+}
+
+.container.fromUser {
+  --bubble-color: var(--highlight-secondary-color);
+  color: var(--highlight-color);
+}
+
+.container.fromUser:after {
+  right: 0;
+  border-left-color: var(--bubble-color);
+  border-right: 0;
+  margin-right: calc(var(--bubble-size) * -1 + 0.1rem);
+}

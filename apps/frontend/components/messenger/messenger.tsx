@@ -5,7 +5,6 @@ import MessageList from '../message-list/message-list';
 
 import styles from './messenger.module.css';
 
-
 interface MessengerProps {
   name: Profile['name'];
   photo: Profile['photo'];

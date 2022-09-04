@@ -1,0 +1,11 @@
+.avatar {
+    min-width: 0;
+}
+
+.fromUser {
+    order: 1;
+}
+
+.fromCorrespondent {
+    order: 0;
+}

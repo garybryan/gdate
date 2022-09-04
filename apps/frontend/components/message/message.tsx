@@ -6,6 +6,10 @@ import Avatar from '@mui/material/Avatar';
 import { Message as MessageType } from '../../types/messages';
 import { Profile } from '../../types/profile';
 
+import MessageBubble from '../message-bubble/message-bubble';
+
+import styles from './message.module.css';
+
 interface MessageProps {
   children: MessageType['content'];
   isFromUser: MessageType['isFromUser'];
@@ -16,10 +20,10 @@ interface MessageProps {
 export function Message({ children, name, photo, isFromUser }: MessageProps) {
   return (
     <ListItem>
-      <ListItemAvatar sx={{order: isFromUser ? 1 : 0}}>
+      <ListItemAvatar className={`${styles['avatar']} ${styles[isFromUser ? 'fromUser' : 'fromCorrespondent']}`}>
         <Avatar alt={name} src={`/profile-photos/${photo}`} />
       </ListItemAvatar>
-      <ListItemText primary={children} />
+      <ListItemText primary={<MessageBubble isFromUser={isFromUser}>{children}</MessageBubble>} />
     </ListItem>
   );
 }

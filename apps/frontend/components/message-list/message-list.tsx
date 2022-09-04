@@ -16,7 +16,12 @@ export function MessageList({ messages, name, photo }: MessageListProps) {
   return (
     <List className={styles['list']}>
       {messages.map((message) => (
-        <Message name={name} photo={photo} key={message.content} isFromUser={message.isFromUser}>
+        <Message
+          name={name}
+          photo={photo}
+          key={message.content}
+          isFromUser={message.isFromUser}
+        >
           {message.content}
         </Message>
       ))}
