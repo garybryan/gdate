@@ -4,12 +4,13 @@ import { Profile } from '../../types/profile';
 import MessageList from '../message-list/message-list';
 
 interface MessengerProps {
-  correspondent: Profile;
+  name: Profile['name'];
+  photo: Profile['photo'];
   messages: Message[];
 }
 
-export function Messenger({ messages, correspondent }: MessengerProps) {
-  return <MessageList messages={messages} correspondent={correspondent} />;
+export function Messenger({ messages, name, photo }: MessengerProps) {
+  return <MessageList messages={messages} name={name} photo={photo} />;
 }
 
 export default Messenger;

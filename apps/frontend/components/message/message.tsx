@@ -14,7 +14,7 @@ interface MessageProps {
 
 export function Message({ children, name, photo }: MessageProps) {
   return (
-    <ListItem alignItems="flex-start">
+    <ListItem>
       <ListItemAvatar>
         <Avatar alt={name} src={`/profile-photos/${photo}`} />
       </ListItemAvatar>

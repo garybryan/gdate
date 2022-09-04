@@ -6,13 +6,14 @@ import { Message as MessageType } from '../../types/messages';
 import { Profile } from '../../types/profile';
 
 interface MessageListProps {
-  correspondent: Profile;
+  name: Profile['name'];
+  photo: Profile['photo'];
   messages: MessageType[];
 }
 
 export function MessageList({
   messages,
-  correspondent: { name, photo },
+  name, photo
 }: MessageListProps) {
   return (
     <List sx={{ width: '100%', bgcolor: 'background.paper' }}>

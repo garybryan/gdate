@@ -3,11 +3,8 @@ import { render, screen } from '@testing-library/react';
 import MessageList from './message-list';
 
 describe('MessageList', () => {
-  const profile = {
-    name: 'Some guy',
-    photo: 'dude.jpg',
-    age: 30,
-  };
+  const name = 'Some guy'
+  const photo = 'dude.jpg'
   const messages = [
     {
       received: true,
@@ -24,7 +21,7 @@ describe('MessageList', () => {
   ];
 
   beforeEach(() =>
-    render(<MessageList messages={messages} correspondent={profile} />)
+    render(<MessageList messages={messages} name={name} photo={photo} />)
   );
 
   it('renders all messages', () => {
