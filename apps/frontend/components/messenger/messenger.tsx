@@ -15,7 +15,7 @@ export function Messenger({ messages, name, photo }: MessengerProps) {
       <h2>
         Conversation with <strong>{name}</strong>
       </h2>
-      <MessageList messages={messages} name={name} photo={photo} />;
+      <MessageList messages={messages} name={name} photo={photo} />
     </>
   );
 }

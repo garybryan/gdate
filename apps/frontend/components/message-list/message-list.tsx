@@ -1,5 +1,4 @@
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 
 import Message from '../message/message';
 import { Message as MessageType } from '../../types/messages';
@@ -19,7 +18,6 @@ export function MessageList({ messages, name, photo }: MessageListProps) {
           {message.content}
         </Message>
       ))}
-      <Divider variant="inset" component="li" />
     </List>
   );
 }
