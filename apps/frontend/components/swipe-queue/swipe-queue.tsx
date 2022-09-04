@@ -6,10 +6,11 @@ interface SwipeQueueProps {
   currentProfileIndex: number;
 }
 
-export function SwipeQueue({ profileQueue, currentProfileIndex }: SwipeQueueProps) {
-  return (
-    <SwipeProfile profile={profileQueue[currentProfileIndex]} />
-  );
+export function SwipeQueue({
+  profileQueue,
+  currentProfileIndex,
+}: SwipeQueueProps) {
+  return <SwipeProfile profile={profileQueue[currentProfileIndex]} />;
 }
 
 export default SwipeQueue;
