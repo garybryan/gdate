@@ -7,15 +7,15 @@ describe('MessageList', () => {
   const photo = 'dude.jpg';
   const messages = [
     {
-      received: true,
+      isFromUser: true,
       content: 'Hi',
     },
     {
-      received: false,
+      isFromUser: false,
       content: "What's up",
     },
     {
-      received: false,
+      isFromUser: false,
       content: 'Second message',
     },
   ];

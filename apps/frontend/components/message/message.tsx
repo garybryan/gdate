@@ -8,14 +8,15 @@ import { Profile } from '../../types/profile';
 
 interface MessageProps {
   children: MessageType['content'];
+  isFromUser: MessageType['isFromUser'];
   name: Profile['name'];
   photo: Profile['photo'];
 }
 
-export function Message({ children, name, photo }: MessageProps) {
+export function Message({ children, name, photo, isFromUser }: MessageProps) {
   return (
     <ListItem>
-      <ListItemAvatar>
+      <ListItemAvatar sx={{order: isFromUser ? 1 : 0}}>
         <Avatar alt={name} src={`/profile-photos/${photo}`} />
       </ListItemAvatar>
       <ListItemText primary={children} />

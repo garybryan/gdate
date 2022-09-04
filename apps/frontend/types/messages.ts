@@ -1,5 +1,5 @@
 export interface Message {
-  received: boolean;
+  isFromUser: boolean;
   content: string;
 }
 
