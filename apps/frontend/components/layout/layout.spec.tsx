@@ -8,9 +8,7 @@ describe('Layout', () => {
   beforeEach(() => render(<Layout>{children}</Layout>));
 
   it('renders heading', () => {
-    expect(
-      screen.getByRole('heading', { level: 1 })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 
   it('renders children', () => {
