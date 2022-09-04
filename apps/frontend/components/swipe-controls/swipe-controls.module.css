@@ -4,3 +4,15 @@
   justify-content: space-around;
   margin-top: 3vh;
 }
+
+.rejectButton {
+  color: #a8326d;
+}
+
+.superLikeButton {
+  color: #3289a8;
+}
+
+.likeButton {
+  color: #32a87f;
+}

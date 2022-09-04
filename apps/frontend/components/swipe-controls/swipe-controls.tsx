@@ -10,9 +10,9 @@ import styles from './swipe-controls.module.css';
 export function SwipeControls() {
   return (
     <section className={styles['container']}>
-      <SwipeButton><CloseIcon aria-label="Reject"/></SwipeButton>
-      <SwipeButton><StarIcon aria-label="SuperLike"/></SwipeButton>
-      <SwipeButton><CheckIcon aria-label="Like"/></SwipeButton>
+      <SwipeButton><CloseIcon aria-label="Reject" className={styles['rejectButton']} /></SwipeButton>
+      <SwipeButton><StarIcon aria-label="SuperLike" className={styles['superLikeButton']} /></SwipeButton>
+      <SwipeButton><CheckIcon aria-label="Like" className={styles['likeButton']} /></SwipeButton>
     </section>
   );
 }

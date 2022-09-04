@@ -6,7 +6,7 @@ import styles from './index.module.css';
 const TEST_PROFILE = {
   name: 'Brad',
   photo: 'brad.jpg',
-  age: 58,
+  age: 28,
 };
 
 export function Swipe() {
