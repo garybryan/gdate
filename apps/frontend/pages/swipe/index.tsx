@@ -1,27 +1,28 @@
 import SwipeControls from '../../components/swipe-controls/swipe-controls';
-import SwipeQueue from '../../components/swipe-profile/swipe-queue';
+
+import getProfileQueue from '../../queue/get-profile-queue/get-profile-queue';
 
 import { Profile } from '../../types/profile';
 
 import styles from './index.module.css';
 
 interface SwipeProps {
-  profiles: Profile[];
+  profileQueue: Profile[];
 }
 
-export function Swipe({ profiles }: SwipeProps) {
+export function Swipe({ profileQueue }: SwipeProps) {
   return (
     <div className={styles['container']}>
-      <SwipeQueue profiles={profiles} />
+      <p>Queue:{JSON.stringify(profileQueue)}</p>
       <SwipeControls />
     </div>
   );
 }
 
 export async function getServerSideProps() {
-  const profiles = await getProfileQueue();
+  const profileQueue = await getProfileQueue();
   return {
-    props: { profiles },
+    props: { profileQueue },
   };
 }
 
