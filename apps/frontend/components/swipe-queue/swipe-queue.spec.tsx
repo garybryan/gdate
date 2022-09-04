@@ -3,21 +3,27 @@ import { render, screen } from '@testing-library/react';
 import SwipeQueue from './swipe-queue';
 
 describe('SwipeQueue', () => {
-  const profile = {
+  const profile1 = {
     name: 'Some guy',
     photo: 'dude.jpg',
     age: 30,
   };
 
-  const profileQueue = [profile];
+  const profile2 = {
+    name: 'Your dream date',
+    photo: 'nobody.jpg',
+    age: 28,
+  };
+
+  const profileQueue = [profile1, profile2];
 
   beforeEach(() => {
-    render(<SwipeQueue profileQueue={profileQueue} />);
+    render(<SwipeQueue profileQueue={profileQueue} currentProfileIndex={1} />);
   });
 
-  it('renders first profile in queue', () => {
+  it('renders profile from queue corresponding to index', () => {
     expect(
-      screen.getByText(profile.name, { exact: false })
+      screen.getByText(profile2.name, { exact: false })
     ).toBeInTheDocument();
   });
 });
