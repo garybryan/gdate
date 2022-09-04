@@ -18,7 +18,7 @@
 .avatar {
   position: absolute;
   top: 1.5vh;
-  right: 3vh;
+  right: 1.5vh;
   --size: 9vh;
   width: var(--size);
   height: var(--size);
