@@ -1,16 +1,20 @@
+import { UserProvider } from '../../contexts/user-context';
+
 import Header from '../header/header';
 
 import styles from './layout.module.css';
 
-export interface LayoutProps {
-  children?: React.ReactNode;
+interface LayoutProps {
+  children: React.ReactNode;
 }
 
 export function Layout({ children }: LayoutProps) {
   return (
     <div className={styles['container']}>
-      <Header />
-      <main className={styles['main']}>{children}</main>
+      <UserProvider>
+        <Header />
+        <main className={styles['main']}>{children}</main>
+      </UserProvider>
     </div>
   );
 }

@@ -1,10 +1,27 @@
 .header {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin: 0 0 2vh;
-  text-align: center;
-  font-size: 2.5vh;
+  color: var(--highlight-secondary-color);
   background-color: var(--highlight-color);
   padding-bottom: 1.75vh;
 }
-.headerText {
+
+.header-text {
   color: var(--highlight-secondary-color);
+  font-size: 7vh;
+}
+
+.avatar {
+  position: absolute;
+  top: 1.5vh;
+  right: 3vh;
+  --size: 9vh;
+  width: var(--size);
+  height: var(--size);
+  border: 1px solid currentColor;
+  box-shadow: 0 0 2vh currentColor;
 }

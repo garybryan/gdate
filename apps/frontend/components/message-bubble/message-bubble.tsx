@@ -6,7 +6,15 @@ interface MessageBubbleProps {
 }
 
 export function MessageBubble({ children, isFromUser }: MessageBubbleProps) {
-  return <div className={`${styles['container']} ${styles[isFromUser ? 'fromUser' : 'fromCorrespondent']}`}>{children}</div>;
+  return (
+    <div
+      className={`${styles['container']} ${
+        styles[isFromUser ? 'fromUser' : 'fromCorrespondent']
+      }`}
+    >
+      {children}
+    </div>
+  );
 }
 
 export default MessageBubble;

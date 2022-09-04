@@ -20,10 +20,18 @@ interface MessageProps {
 export function Message({ children, name, photo, isFromUser }: MessageProps) {
   return (
     <ListItem>
-      <ListItemAvatar className={`${styles['avatar']} ${styles[isFromUser ? 'fromUser' : 'fromCorrespondent']}`}>
+      <ListItemAvatar
+        className={`${styles['avatar']} ${
+          styles[isFromUser ? 'fromUser' : 'fromCorrespondent']
+        }`}
+      >
         <Avatar alt={name} src={`/profile-photos/${photo}`} />
       </ListItemAvatar>
-      <ListItemText primary={<MessageBubble isFromUser={isFromUser}>{children}</MessageBubble>} />
+      <ListItemText
+        primary={
+          <MessageBubble isFromUser={isFromUser}>{children}</MessageBubble>
+        }
+      />
     </ListItem>
   );
 }
