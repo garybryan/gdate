@@ -11,5 +11,5 @@
   bottom: 1vh;
   font-size: 6vh;
   color: #fff;
-  text-shadow: 2px 2px 5px #36232a;
+  text-shadow: 2px 2px 4px #36232a, -2px -2px 4px #36232a;
 }
