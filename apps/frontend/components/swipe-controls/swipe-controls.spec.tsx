@@ -8,20 +8,14 @@ describe('SwipeControls', () => {
   });
 
   it('renders reject button', () => {
-    expect(
-      screen.getByLabelText('Reject')
-    ).toBeInTheDocument();
+    expect(screen.getByLabelText('Reject')).toBeInTheDocument();
   });
 
   it('renders like button', () => {
-    expect(
-      screen.getByLabelText('Like')
-    ).toBeInTheDocument();
+    expect(screen.getByLabelText('Like')).toBeInTheDocument();
   });
 
   it('renders super-like button', () => {
-    expect(
-      screen.getByLabelText('SuperLike')
-    ).toBeInTheDocument();
+    expect(screen.getByLabelText('SuperLike')).toBeInTheDocument();
   });
 });

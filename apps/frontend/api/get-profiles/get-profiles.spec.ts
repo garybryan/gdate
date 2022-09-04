@@ -6,5 +6,5 @@ describe('getProfiles', () => {
     const profiles = await getProfiles();
 
     expect(profiles).toStrictEqual(testProfiles.profiles);
-  })
+  });
 });

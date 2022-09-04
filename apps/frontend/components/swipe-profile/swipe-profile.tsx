@@ -13,15 +13,15 @@ export function SwipeProfile({
 }: SwipeProfileProps) {
   return (
     <section className={styles['container']}>
-        <Image
-          alt={`Photo of ${name}`}
-          src={`/profile-photos/${photo}`}
-          layout="fill"
-          objectFit="contain"
-        />
-        <h2 className={styles['details']}>
-          {name}, {age}
-        </h2>
+      <Image
+        alt={`Photo of ${name}`}
+        src={`/profile-photos/${photo}`}
+        layout="fill"
+        objectFit="contain"
+      />
+      <h2 className={styles['details']}>
+        {name}, {age}
+      </h2>
     </section>
   );
 }

@@ -1,21 +1,28 @@
 import SwipeControls from '../../components/swipe-controls/swipe-controls';
-import SwipeProfile from '../../components/swipe-profile/swipe-profile';
+import SwipeQueue from '../../components/swipe-profile/swipe-queue';
+
+import { Profile } from '../../types/profile';
 
 import styles from './index.module.css';
 
-const TEST_PROFILE = {
-  name: 'Brad',
-  photo: 'brad.jpg',
-  age: 28,
-};
+interface SwipeProps {
+  profiles: Profile[];
+}
 
-export function Swipe() {
+export function Swipe({ profiles }: SwipeProps) {
   return (
     <div className={styles['container']}>
-      <SwipeProfile profile={TEST_PROFILE} />
+      <SwipeQueue profiles={profiles} />
       <SwipeControls />
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const profiles = await getProfileQueue();
+  return {
+    props: { profiles },
+  };
 }
 
 export default Swipe;
