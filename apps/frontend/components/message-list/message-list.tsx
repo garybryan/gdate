@@ -11,10 +11,7 @@ interface MessageListProps {
   messages: MessageType[];
 }
 
-export function MessageList({
-  messages,
-  name, photo
-}: MessageListProps) {
+export function MessageList({ messages, name, photo }: MessageListProps) {
   return (
     <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
       {messages.map((message) => (

@@ -3,11 +3,8 @@ import { render, screen } from '@testing-library/react';
 import Messenger from './messenger';
 
 describe('Messenger', () => {
-  const profile = {
-    name: 'Some guy',
-    photo: 'dude.jpg',
-    age: 30,
-  };
+  const name = 'Some guy';
+  const photo = 'dude.jpg';
   const messages = [
     {
       received: true,
@@ -24,10 +21,16 @@ describe('Messenger', () => {
   ];
 
   beforeEach(() =>
-    render(<Messenger messages={messages} correspondent={profile} />)
+    render(<Messenger messages={messages} name={name} photo={photo} />)
   );
 
-  it('renders all messages', () => {
+  it('renders correspondent name', () => {
+    expect(
+      screen.getByRole('heading', { name: `Conversation with ${name}` })
+    ).toBeInTheDocument();
+  });
+
+  it('renders messages', () => {
     for (const message of messages) {
       expect(screen.getByText(message.content)).toBeInTheDocument();
     }
