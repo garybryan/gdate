@@ -10,7 +10,7 @@ describe('SwipeProfile', () => {
   };
 
   beforeEach(() => {
-    render(<SwipeProfile profile={profile} />);
+    render(<SwipeProfile {...profile} />);
   });
 
   it('renders name', () => {

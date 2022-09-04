@@ -4,13 +4,7 @@ import { Profile } from '../../types/profile';
 
 import styles from './swipe-profile.module.css';
 
-interface SwipeProfileProps {
-  profile: Profile;
-}
-
-export function SwipeProfile({
-  profile: { name, photo, age },
-}: SwipeProfileProps) {
+export function SwipeProfile({ name, age, photo }: Profile) {
   return (
     <section className={styles['container']}>
       <Image

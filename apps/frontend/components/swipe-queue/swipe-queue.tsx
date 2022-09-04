@@ -10,7 +10,7 @@ export function SwipeQueue({
   profileQueue,
   currentProfileIndex,
 }: SwipeQueueProps) {
-  return <SwipeProfile profile={profileQueue[currentProfileIndex]} />;
+  return <SwipeProfile {...profileQueue[currentProfileIndex]} />;
 }
 
 export default SwipeQueue;
