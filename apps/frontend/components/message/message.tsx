@@ -19,7 +19,7 @@ interface MessageProps {
 
 export function Message({ children, name, photo, isFromUser }: MessageProps) {
   return (
-    <ListItem>
+    <ListItem className={styles['listItem']}>
       <ListItemAvatar
         className={`${styles['avatar']} ${
           styles[isFromUser ? 'fromUser' : 'fromCorrespondent']

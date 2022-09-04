@@ -9,7 +9,7 @@ describe('Message', () => {
 
   beforeEach(() =>
     render(
-      <Message name={name} photo={photo}>
+      <Message name={name} photo={photo} isFromUser={false}>
         {content}
       </Message>
     )

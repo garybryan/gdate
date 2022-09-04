@@ -14,7 +14,7 @@ interface MessengerProps {
 export function Messenger({ messages, name, photo }: MessengerProps) {
   return (
     <>
-      <h2>
+      <h2 className={styles['header']}>
         Conversation with <strong>{name}</strong>
       </h2>
       <div className={styles['conversation-container']}>
