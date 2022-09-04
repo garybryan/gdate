@@ -68,3 +68,8 @@ pre {
 .rounded {
   border-radius: 1.5rem;
 }
+
+:root {
+  --highlight-color: #eb348c;
+  --shadow-color: #36232a;
+}

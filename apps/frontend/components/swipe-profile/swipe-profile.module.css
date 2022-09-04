@@ -1,5 +1,5 @@
 .container {
-  background-color: #224;
+  background-color: var(--shadow-color);
   position: relative;
   flex-grow: 1;
 }
@@ -11,5 +11,7 @@
   bottom: 1vh;
   font-size: 6vh;
   color: #fff;
-  text-shadow: 2px 2px 4px #36232a, -2px -2px 4px #36232a;
+  text-shadow: 2px 2px 8px var(--shadow-color),
+    -2px -2px 8px var(--shadow-color), 2px -2px 8px var(--shadow-color),
+    -2px 2px 8px var(--shadow-color);
 }
