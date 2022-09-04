@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useFakeLoading } from './fake-loading';
 
 describe('useFakeLoading', () => {
-  const delay = 2000;
+  const delay = 1500;
   const render = () => renderHook(() => useFakeLoading(delay));
 
   beforeEach(jest.useFakeTimers);
