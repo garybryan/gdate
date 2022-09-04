@@ -20,18 +20,27 @@ export function SwipeControls({
   return (
     <section className={styles['container']}>
       <SwipeButton onClick={() => onReject()}>
-        <CloseIcon aria-label="Reject" className={styles['rejectButton']} />
+        <CloseIcon
+          aria-label="Reject"
+          className={styles['rejectButton']}
+          fontSize="inherit"
+        />
       </SwipeButton>
 
       <SwipeButton onClick={() => onSuperLike()}>
         <StarIcon
           aria-label="SuperLike"
           className={styles['superLikeButton']}
+          fontSize="inherit"
         />
       </SwipeButton>
 
       <SwipeButton onClick={() => onLike()}>
-        <CheckIcon aria-label="Like" className={styles['likeButton']} />
+        <CheckIcon
+          aria-label="Like"
+          className={styles['likeButton']}
+          fontSize="inherit"
+        />
       </SwipeButton>
     </section>
   );
