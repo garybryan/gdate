@@ -9,7 +9,9 @@ interface SwipeProps {
 }
 
 export function Swipe({ profileQueue }: SwipeProps) {
-  return <SwipeInterface profileQueue={profileQueue} />;
+  const isLoading = useFakeLoading();
+
+  return isLoading ? 'loading' : <SwipeInterface profileQueue={profileQueue} />;
 }
 
 export async function getServerSideProps() {

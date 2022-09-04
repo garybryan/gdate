@@ -9,7 +9,7 @@ describe('Layout', () => {
 
   it('renders heading', () => {
     expect(
-      screen.getByRole('heading', { level: 1, name: 'gdate' })
+      screen.getByRole('heading', { level: 1 })
     ).toBeInTheDocument();
   });
 

@@ -72,4 +72,5 @@ pre {
 :root {
   --highlight-color: #eb348c;
   --shadow-color: #36232a;
+  --highlight-secondary-color: #fff;
 }
