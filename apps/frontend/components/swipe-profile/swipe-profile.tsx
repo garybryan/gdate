@@ -12,6 +12,7 @@ export function SwipeProfile({ name, age, photo }: Profile) {
         src={`/profile-photos/${photo}`}
         layout="fill"
         objectFit="contain"
+        priority
       />
       <h2 className={styles['details']}>
         {name}, {age}
