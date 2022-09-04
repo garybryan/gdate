@@ -1,4 +1,5 @@
 import SwipeControls from '../../components/swipe-controls/swipe-controls';
+import SwipeQueue from '../../components/swipe-queue/swipe-queue';
 
 import getProfileQueue from '../../queue/get-profile-queue/get-profile-queue';
 
@@ -13,7 +14,7 @@ interface SwipeProps {
 export function Swipe({ profileQueue }: SwipeProps) {
   return (
     <div className={styles['container']}>
-      <p>Queue:{JSON.stringify(profileQueue)}</p>
+      <SwipeQueue profileQueue={profileQueue} />
       <SwipeControls />
     </div>
   );
