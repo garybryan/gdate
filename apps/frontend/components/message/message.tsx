@@ -17,18 +17,14 @@ interface MessageProps {
 }
 
 export function Message({ children, name, photo, isFromUser }: MessageProps) {
+  const senderClass = isFromUser ? 'fromUser' : 'fromCorrespondent';
   return (
-    <ListItem className={styles['listItem']}>
+    <ListItem className={`${styles['listItem']} ${styles[senderClass]}`}>
       <Avatar
         alt={name}
         src={`/profile-photos/${photo}`}
-        className={styles[isFromUser ? 'fromUser' : 'fromCorrespondent']}
       />
-      <ListItemText
-        primary={
-          <MessageBubble isFromUser={isFromUser}>{children}</MessageBubble>
-        }
-      />
+      <MessageBubble isFromUser={isFromUser}>{children}</MessageBubble>
     </ListItem>
   );
 }

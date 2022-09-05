@@ -25,9 +25,6 @@ export function Messenger({
 
   return (
     <div className={styles['container']}>
-      <h2 className={styles['header']}>
-        Conversation with <strong>{correspondentName}</strong>
-      </h2>
       <div className={styles['conversation-container']}>
         <MessageList
           messages={messages}

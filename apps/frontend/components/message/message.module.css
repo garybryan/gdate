@@ -1,11 +1,13 @@
 .listItem {
   padding: 1vh;
+  width: 100%;
 }
 
-.fromUser {
-  order: 1;
+.listItem.fromCorrespondent {
+  justify-content: left;
 }
 
-.fromCorrespondent {
-  order: 0;
+.listItem.fromUser {
+  flex-direction: row-reverse;
+  justify-content: right;
 }
