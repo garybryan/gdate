@@ -15,10 +15,13 @@
   font-size: 7vh;
 }
 
-.avatar {
+.avatarContainer {
   position: absolute;
   top: 1.5vh;
   right: 1.5vh;
+}
+
+.avatar {
   --size: 9vh;
   width: var(--size);
   height: var(--size);
