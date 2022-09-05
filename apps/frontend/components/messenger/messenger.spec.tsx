@@ -67,7 +67,6 @@ describe('Messenger', () => {
     await userEvent.type(messageField, message);
     await userEvent.click(messageSendButton);
 
-    expect(screen.getByText(message)).toBeInTheDocument();
     expect(onMessageSent).toHaveBeenCalledTimes(1);
     expect(onMessageSent).toHaveBeenCalledWith(message);
   });

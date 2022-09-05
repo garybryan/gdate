@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import styles from './message-field.module.css';
 
 interface MessageFieldProps {
-  onSendMessage: (content: string) => Promise<void>;
+  onSendMessage: (content: string) => void;
 }
 
 export function MessageField({ onSendMessage }: MessageFieldProps) {
