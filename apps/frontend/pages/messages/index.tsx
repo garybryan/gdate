@@ -33,7 +33,7 @@ export async function getServerSideProps() {
   const profile = {
     name: 'Dinesh',
     photo: 'dinesh.jpg',
-    age: 28
+    age: 28,
   };
   return {
     props: { messages, correspondent: profile },

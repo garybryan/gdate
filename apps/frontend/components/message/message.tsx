@@ -1,6 +1,5 @@
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 
 import { Message as MessageType } from '../../types/messages';
@@ -20,13 +19,11 @@ interface MessageProps {
 export function Message({ children, name, photo, isFromUser }: MessageProps) {
   return (
     <ListItem className={styles['listItem']}>
-      <ListItemAvatar
-        className={`${styles['avatar']} ${
-          styles[isFromUser ? 'fromUser' : 'fromCorrespondent']
-        }`}
-      >
-        <Avatar alt={name} src={`/profile-photos/${photo}`} />
-      </ListItemAvatar>
+      <Avatar
+        alt={name}
+        src={`/profile-photos/${photo}`}
+        className={styles[isFromUser ? 'fromUser' : 'fromCorrespondent']}
+      />
       <ListItemText
         primary={
           <MessageBubble isFromUser={isFromUser}>{children}</MessageBubble>

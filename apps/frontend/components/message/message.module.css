@@ -2,10 +2,6 @@
   padding: 1vh;
 }
 
-.avatar {
-  min-width: 0;
-}
-
 .fromUser {
   order: 1;
 }
