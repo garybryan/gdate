@@ -11,15 +11,17 @@ import styles from './messenger.module.css';
 interface MessengerProps {
   correspondentName: Profile['name'];
   correspondentPhoto: Profile['photo'];
-  messages: Message[];
+  messages?: Message[];
+  onMessageSent?: (content: string) => Promise<void>;
 }
 
 export function Messenger({
   messages: initialMessages,
   correspondentName,
   correspondentPhoto,
+  onMessageSent,
 }: MessengerProps) {
-  const [messages, setMessages] = useState(initialMessages);
+  const [messages, setMessages] = useState(initialMessages || []);
 
   const onSendMessage = async (content: string) => {
     setMessages([
@@ -29,6 +31,7 @@ export function Messenger({
         isFromUser: true,
       },
     ]);
+    await onMessageSent?.(content);
   };
 
   return (

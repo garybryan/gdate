@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1vh;
+}
+
+.field {
+  flex: 1;
+  color: var(--highlight-color);
+  background-color: var(--highlight-secondary-color);
+}
+
+.sendButton {
+  width: 2.5rem;
+  cursor: pointer;
+  color: var(--highlight-secondary-color);
+  background-color: var(--highlight-color);
+}
+
+.field,
+.sendButton {
+  border: 1px solid currentColor;
+  border-radius: 2vh;
+}

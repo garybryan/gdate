@@ -29,6 +29,7 @@ describe('Messenger', () => {
       content: 'Second message',
     },
   ];
+  const onMessageSent = jest.fn();
 
   beforeEach(() => {
     mockedUseUser.mockReturnValue({ user: TEST_USER, setUser: jest.fn() });
@@ -38,6 +39,7 @@ describe('Messenger', () => {
           messages={messages}
           correspondentName={correspondentName}
           correspondentPhoto={correspondentPhoto}
+          onMessageSent={onMessageSent}
         />
       </UserProvider>
     );
@@ -66,5 +68,7 @@ describe('Messenger', () => {
     await userEvent.click(messageSendButton);
 
     expect(screen.getByText(message)).toBeInTheDocument();
+    expect(onMessageSent).toHaveBeenCalledTimes(1);
+    expect(onMessageSent).toHaveBeenCalledWith(message);
   });
 });
