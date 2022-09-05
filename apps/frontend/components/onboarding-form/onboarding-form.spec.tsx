@@ -19,7 +19,7 @@ describe('OnboardingForm', () => {
   });
 
   it('renders interests field', () => {
-    expect(screen.getByLabelText("I'm into:")).toBeInTheDocument();
+    expect(screen.getByLabelText("I like:")).toBeInTheDocument();
   });
 
   it('renders pineapple field', () => {

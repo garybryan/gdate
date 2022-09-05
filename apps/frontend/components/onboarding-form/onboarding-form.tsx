@@ -15,9 +15,9 @@ const interestedInChoices = [
 ];
 
 const interestsChoices = [
-  'True crime documentaries',
-  'The Office (US version)',
   'Adventures',
+  'The Office (US version)',
+  'True crime documentaries',
 ];
 
 const pineappleChoices = ['Love it! 🍍🍕🤤', 'No way! 🍍🍕🤮'];
@@ -38,7 +38,7 @@ export function OnboardingForm() {
           choices={interestedInChoices}
         />
 
-        <MultipleChoiceField label="I'm into:" choices={interestsChoices} />
+        <MultipleChoiceField label="I like:" choices={interestsChoices} />
 
         <SingleChoiceField
           label="Does pineapple belong on pizza?"

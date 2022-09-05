@@ -16,7 +16,6 @@ describe('MultipleChoiceField', () => {
 
   it('renders choice fields', () => {
     choices.forEach((value) => {
-      expect(screen.getByDisplayValue(value)).toBeInTheDocument();
       expect(screen.getByLabelText(value)).toBeInTheDocument();
     });
   });
