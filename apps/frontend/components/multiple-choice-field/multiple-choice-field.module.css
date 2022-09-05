@@ -1,6 +1,6 @@
 .group {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5vh;
 }

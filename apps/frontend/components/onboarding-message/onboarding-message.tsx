@@ -5,7 +5,9 @@ export function OnboardingMessage() {
   return (
     <>
       <h2>Welcome!</h2>
-      <Typography className={styles['subheading']}>Tell us a bit about yourself...</Typography>
+      <Typography className={styles['subheading']}>
+        Tell us a bit about yourself...
+      </Typography>
     </>
   );
 }

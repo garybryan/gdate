@@ -5,7 +5,7 @@ import ChoiceField, {
   BaseChoiceFieldProps,
 } from '../choice-field/choice-field';
 
-import styles from './multiple-choice-field.module.css'
+import styles from './multiple-choice-field.module.css';
 
 export function MultipleChoiceField(props: BaseChoiceFieldProps) {
   return (
@@ -14,7 +14,12 @@ export function MultipleChoiceField(props: BaseChoiceFieldProps) {
       renderChoices={(choices, labelId) => (
         <FormGroup aria-labelledby={labelId} className={styles['group']}>
           {choices.map((value) => (
-            <Chip key={value} label={value} aria-label={value} onDelete={() => null} />
+            <Chip
+              key={value}
+              label={value}
+              aria-label={value}
+              onDelete={() => null}
+            />
           ))}
         </FormGroup>
       )}

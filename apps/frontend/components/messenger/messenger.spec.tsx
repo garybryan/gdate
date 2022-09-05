@@ -59,8 +59,8 @@ describe('Messenger', () => {
 
   it('can send a message', async () => {
     const messageField = screen.getByRole('textbox');
-    const messageSendButton = screen.getByRole('button', { name: 'Send'});
-    const message = "Hello there!";
+    const messageSendButton = screen.getByRole('button', { name: 'Send' });
+    const message = 'Hello there!';
 
     await userEvent.type(messageField, message);
     await userEvent.click(messageSendButton);

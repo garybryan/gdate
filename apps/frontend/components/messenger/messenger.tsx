@@ -22,11 +22,14 @@ export function Messenger({
   const [messages, setMessages] = useState(initialMessages);
 
   const onSendMessage = async (content: string) => {
-    setMessages([...messages, {
-      content,
-      isFromUser: true
-    }])
-  }
+    setMessages([
+      ...messages,
+      {
+        content,
+        isFromUser: true,
+      },
+    ]);
+  };
 
   return (
     <div className={styles['container']}>
