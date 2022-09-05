@@ -55,4 +55,8 @@ describe('Messenger', () => {
       expect(screen.getByText(message.content)).toBeInTheDocument();
     }
   });
+
+  it('renders a message field', () => {
+    expect(screen.getByRole('textbox')).toBeInTheDocument();
+  });
 });
