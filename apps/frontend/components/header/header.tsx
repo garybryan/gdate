@@ -10,9 +10,13 @@ export function Header() {
   return (
     <header className={styles['header']}>
       <h1 className={styles['header-text']}>gdate</h1>
-      {user && 
-        <Avatar className={styles['avatar']} alt={user.name} src={`/profile-photos/${user.photo}`} />
-      }
+      {user && (
+        <Avatar
+          className={styles['avatar']}
+          alt={user.name}
+          src={`/profile-photos/${user.photo}`}
+        />
+      )}
     </header>
   );
 }

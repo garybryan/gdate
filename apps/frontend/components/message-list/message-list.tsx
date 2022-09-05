@@ -7,18 +7,22 @@ import { Profile } from '../../types/profile';
 import styles from './message-list.module.css';
 
 interface MessageListProps {
-  name: Profile['name'];
-  photo: Profile['photo'];
+  correspondentName: Profile['name'];
+  correspondentPhoto: Profile['photo'];
   messages: MessageType[];
 }
 
-export function MessageList({ messages, name, photo }: MessageListProps) {
+export function MessageList({
+  messages,
+  correspondentName,
+  correspondentPhoto,
+}: MessageListProps) {
   return (
     <List className={styles['list']}>
       {messages.map((message) => (
         <Message
-          name={name}
-          photo={photo}
+          name={correspondentName}
+          photo={correspondentPhoto}
           key={message.content}
           isFromUser={message.isFromUser}
         >

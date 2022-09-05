@@ -3,4 +3,3 @@ export interface Profile {
   photo: string;
   age: number;
 }
-

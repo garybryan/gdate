@@ -16,9 +16,9 @@ export function Swipe({ profileQueue }: SwipeProps) {
     setUser({
       name: 'Tester',
       age: 22,
-      photo: 'richard.jpg'
-    })
-  })
+      photo: 'richard.jpg',
+    });
+  });
   return <SwipeInterface profileQueue={profileQueue} />;
 }
 

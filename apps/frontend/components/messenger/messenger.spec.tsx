@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import Messenger from './messenger';
 
 describe('Messenger', () => {
-  const name = 'Some guy';
-  const photo = 'dude.jpg';
+  const correspondentName = 'Some guy';
+  const correspondentPhoto = 'dude.jpg';
   const messages = [
     {
       isFromUser: true,
@@ -21,12 +21,20 @@ describe('Messenger', () => {
   ];
 
   beforeEach(() =>
-    render(<Messenger messages={messages} name={name} photo={photo} />)
+    render(
+      <Messenger
+        messages={messages}
+        correspondentName={correspondentName}
+        correspondentPhoto={correspondentPhoto}
+      />
+    )
   );
 
   it('renders correspondent name', () => {
     expect(
-      screen.getByRole('heading', { name: `Conversation with ${name}` })
+      screen.getByRole('heading', {
+        name: `Conversation with ${correspondentName}`,
+      })
     ).toBeInTheDocument();
   });
 
