@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { UserProvider } from '../../contexts/user-context';
 
@@ -56,7 +57,14 @@ describe('Messenger', () => {
     }
   });
 
-  it('renders a message field', () => {
-    expect(screen.getByRole('textbox')).toBeInTheDocument();
+  it('can send a message', async () => {
+    const messageField = screen.getByRole('textbox');
+    const messageSendButton = screen.getByRole('button', { name: 'Send'});
+    const message = "Hello there!";
+
+    await userEvent.type(messageField, message);
+    await userEvent.click(messageSendButton);
+
+    expect(screen.getByText(message)).toBeInTheDocument();
   });
 });

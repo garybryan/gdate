@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Message } from '../../types/messages';
 import { Profile } from '../../types/profile';
 
@@ -13,10 +15,19 @@ interface MessengerProps {
 }
 
 export function Messenger({
-  messages,
+  messages: initialMessages,
   correspondentName,
   correspondentPhoto,
 }: MessengerProps) {
+  const [messages, setMessages] = useState(initialMessages);
+
+  const onSendMessage = async (content: string) => {
+    setMessages([...messages, {
+      content,
+      isFromUser: true
+    }])
+  }
+
   return (
     <div className={styles['container']}>
       <h2 className={styles['header']}>
@@ -29,7 +40,7 @@ export function Messenger({
           correspondentPhoto={correspondentPhoto}
         />
       </div>
-      <MessageField onSendMessage={async () => {return;}} />
+      <MessageField onSendMessage={onSendMessage} />
     </div>
   );
 }
