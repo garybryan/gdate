@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import SwipeInterface from '../../components/swipe-interface/swipe-interface';
-import { useUser } from '../../contexts/user-context';
+import { useUser } from '../../hooks/user/user';
 import getProfileQueue from '../../queue/get-profile-queue/get-profile-queue';
 
 import { Profile } from '../../types/profile';

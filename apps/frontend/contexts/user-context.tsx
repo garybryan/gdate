@@ -1,8 +1,7 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from 'react';
 
 import { Profile } from '../types/profile';
 
-// TODO avoid exporting this and find a better way to do tests.
 export const UserContext = createContext<{
   user: Profile;
   setUser: (user: Profile) => void;
@@ -19,12 +18,4 @@ function UserProvider({ children }: UserProviderProps) {
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
 
-function useUser() {
-  const context = useContext(UserContext);
-  if (context === undefined) {
-    throw new Error('useUser must be used within a UserProvider');
-  }
-  return context;
-}
-
-export { UserProvider, useUser };
+export { UserProvider };

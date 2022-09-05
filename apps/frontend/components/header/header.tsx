@@ -1,6 +1,6 @@
 import Avatar from '@mui/material/Avatar';
 
-import { useUser } from '../../contexts/user-context';
+import { useUser } from '../../hooks/user/user';
 
 import styles from './header.module.css';
 

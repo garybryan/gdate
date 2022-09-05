@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react';
 
-import { UserContext } from '../../contexts/user-context';
+import { useUser } from '../../hooks/user/user';
 
 import Header from './header';
+
+jest.mock('../../hooks/user/user');
+
+const mockedUseUser = jest.mocked(useUser);
 
 describe('Header', () => {
   const user = {
@@ -11,14 +15,11 @@ describe('Header', () => {
     age: 25,
   };
 
-  const renderComponent = () =>
-    render(
-      <UserContext.Provider value={{ user, setUser: jest.fn() }}>
-        <Header />
-      </UserContext.Provider>
-    );
+  const renderComponent = () => render(<Header />);
 
   it('renders heading', () => {
+    mockedUseUser.mockReturnValue({ user: null, setUser: jest.fn() });
+
     renderComponent();
 
     expect(
@@ -27,6 +28,8 @@ describe('Header', () => {
   });
 
   it('renders avatar for logged-in user', () => {
+    mockedUseUser.mockReturnValue({ user, setUser: jest.fn() });
+
     renderComponent();
 
     expect(screen.getByAltText(user.name)).toBeInTheDocument();
