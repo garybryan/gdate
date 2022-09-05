@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 import SwipeControls from '../../components/swipe-controls/swipe-controls';
 import SwipeQueue from '../../components/swipe-queue/swipe-queue';
@@ -12,6 +13,8 @@ interface SwipeProps {
 }
 
 export function SwipeInterface({ profileQueue }: SwipeProps) {
+  const { push } = useRouter();
+
   const [currentProfileIndex, setCurrentProfileIndex] = useState(0);
 
   const goToNextProfile = () => {
@@ -19,6 +22,10 @@ export function SwipeInterface({ profileQueue }: SwipeProps) {
       setCurrentProfileIndex(currentProfileIndex + 1);
     }
   };
+
+  const onLike = () => {
+    push('/messages');
+  }
 
   return (
     <div className={styles['container']}>
@@ -28,7 +35,7 @@ export function SwipeInterface({ profileQueue }: SwipeProps) {
       />
       <SwipeControls
         onReject={goToNextProfile}
-        onLike={goToNextProfile}
+        onLike={onLike}
         onSuperLike={goToNextProfile}
       />
     </div>

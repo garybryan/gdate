@@ -3,6 +3,14 @@ import userEvent from '@testing-library/user-event';
 
 import SwipeInterface from './swipe-interface';
 
+const mockPush = jest.fn();
+
+jest.mock('next/router', () => ({
+  useRouter: () => ({
+    push: mockPush,
+  }),
+}));
+
 describe('SwipeInterface', () => {
   const profile1 = {
     name: 'Some guy',
@@ -32,7 +40,7 @@ describe('SwipeInterface', () => {
     ).not.toBeInTheDocument();
   });
 
-  it.each(['Reject', 'Like', 'SuperLike'])(
+  it.each(['Reject', 'SuperLike'])(
     'goes to next profile in queue when clicking a button',
     async (label) => {
       await userEvent.click(screen.getByLabelText(label));
@@ -46,4 +54,11 @@ describe('SwipeInterface', () => {
       ).toBeInTheDocument();
     }
   );
+
+  it('goes to message page on like', async () => {
+    await userEvent.click(screen.getByLabelText('Like'));
+
+    expect(mockPush).toHaveBeenCalledTimes(1);
+    expect(mockPush).toHaveBeenCalledWith('/messages');
+  })
 });
