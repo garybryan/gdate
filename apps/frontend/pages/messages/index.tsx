@@ -1,5 +1,6 @@
-import getMessages from '../../messages/get-messages/get-messages';
+// import getMessages from '../../messages/get-messages/get-messages';
 
+import { useFakeUser } from '../../hooks/fake-user/fake-user';
 import { Message } from '../../types/messages';
 import { Profile } from '../../types/profile';
 
@@ -14,7 +15,15 @@ export function Messages({
   messages,
   correspondent: { name, photo },
 }: MessagesProps) {
-  return <Messenger messages={messages} name={name} photo={photo} />;
+  useFakeUser();
+
+  return (
+    <Messenger
+      messages={messages}
+      correspondentName={name}
+      correspondentPhoto={photo}
+    />
+  );
 }
 
 export default Messages;

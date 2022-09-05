@@ -1,6 +1,15 @@
 import { render, screen } from '@testing-library/react';
 
+import { UserProvider } from '../../contexts/user-context';
+
+import { useUser } from '../../hooks/user/user';
+import TEST_USER from '../../fixtures/test-user';
+
 import Messenger from './messenger';
+
+jest.mock('../../hooks/user/user');
+
+const mockedUseUser = jest.mocked(useUser);
 
 describe('Messenger', () => {
   const correspondentName = 'Some guy';
@@ -20,15 +29,18 @@ describe('Messenger', () => {
     },
   ];
 
-  beforeEach(() =>
+  beforeEach(() => {
+    mockedUseUser.mockReturnValue({user: TEST_USER, setUser: jest.fn()});
     render(
-      <Messenger
-        messages={messages}
-        correspondentName={correspondentName}
-        correspondentPhoto={correspondentPhoto}
-      />
+      <UserProvider>
+        <Messenger
+          messages={messages}
+          correspondentName={correspondentName}
+          correspondentPhoto={correspondentPhoto}
+        />
+      </UserProvider>
     )
-  );
+  });
 
   it('renders correspondent name', () => {
     expect(

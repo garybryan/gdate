@@ -1,5 +1,6 @@
 import List from '@mui/material/List';
 
+import { useUser } from '../../hooks/user/user';
 import Message from '../message/message';
 import { Message as MessageType } from '../../types/messages';
 import { Profile } from '../../types/profile';
@@ -17,16 +18,24 @@ export function MessageList({
   correspondentName,
   correspondentPhoto,
 }: MessageListProps) {
+  const { user } = useUser();
+
+  if (!user) {
+    return null;
+  }
+
+  const { name: userName, photo: userPhoto } = user;
+
   return (
     <List className={styles['list']}>
-      {messages.map((message) => (
+      {messages.map(({ isFromUser, content }) => (
         <Message
-          name={correspondentName}
-          photo={correspondentPhoto}
-          key={message.content}
-          isFromUser={message.isFromUser}
+          name={isFromUser ? userName : correspondentName}
+          photo={isFromUser ? userPhoto : correspondentPhoto}
+          key={content}
+          isFromUser={isFromUser}
         >
-          {message.content}
+          {content}
         </Message>
       ))}
     </List>

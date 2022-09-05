@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
-
 import SwipeInterface from '../../components/swipe-interface/swipe-interface';
-import { useUser } from '../../hooks/user/user';
+import { useFakeUser } from '../../hooks/fake-user/fake-user';
 import getProfileQueue from '../../queue/get-profile-queue/get-profile-queue';
 
 import { Profile } from '../../types/profile';
@@ -11,14 +9,7 @@ interface SwipeProps {
 }
 
 export function Swipe({ profileQueue }: SwipeProps) {
-  const { setUser } = useUser();
-  useEffect(() => {
-    setUser({
-      name: 'Tester',
-      age: 22,
-      photo: 'richard.jpg',
-    });
-  });
+  useFakeUser();
   return <SwipeInterface profileQueue={profileQueue} />;
 }
 
