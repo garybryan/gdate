@@ -27,13 +27,14 @@ describe('MessageList', () => {
     },
   ];
 
-  const renderComponent = () => render(
-        <MessageList
-          messages={messages}
-          correspondentName={correspondentName}
-          correspondentPhoto={correspondentPhoto}
-        />
-      );
+  const renderComponent = () =>
+    render(
+      <MessageList
+        messages={messages}
+        correspondentName={correspondentName}
+        correspondentPhoto={correspondentPhoto}
+      />
+    );
 
   describe('User logged in', () => {
     beforeEach(() => {

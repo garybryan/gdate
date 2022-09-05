@@ -30,7 +30,7 @@ describe('Messenger', () => {
   ];
 
   beforeEach(() => {
-    mockedUseUser.mockReturnValue({user: TEST_USER, setUser: jest.fn()});
+    mockedUseUser.mockReturnValue({ user: TEST_USER, setUser: jest.fn() });
     render(
       <UserProvider>
         <Messenger
@@ -39,7 +39,7 @@ describe('Messenger', () => {
           correspondentPhoto={correspondentPhoto}
         />
       </UserProvider>
-    )
+    );
   });
 
   it('renders correspondent name', () => {
