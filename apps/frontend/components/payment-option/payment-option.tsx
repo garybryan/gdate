@@ -17,7 +17,7 @@ export function PaymentOption({
   bestValue,
 }: PaymentOptionProps) {
   return (
-    <Card className={styles['container']}>
+    <Card className={`${styles['container']} ${bestValue ? styles['best'] : ''}`}>
       <CardContent className={styles['content']}>
         {bestValue && <div className={styles['bestValue']}>Best Value!</div>}
         <h3 className={styles['heading']}>{name}</h3>
