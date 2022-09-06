@@ -9,12 +9,14 @@ import styles from './messenger.module.css';
 interface MessengerProps {
   correspondentName: Profile['name'];
   correspondentPhoto: Profile['photo'];
+  isCorrespondentTyping?: boolean;
   messages?: Message[];
   onMessageSent?: (content: string) => void;
 }
 
 export function Messenger({
   messages,
+  isCorrespondentTyping = false,
   correspondentName,
   correspondentPhoto,
   onMessageSent,
@@ -30,6 +32,7 @@ export function Messenger({
           messages={messages}
           correspondentName={correspondentName}
           correspondentPhoto={correspondentPhoto}
+          isCorrespondentTyping={true}
         />
       </div>
       <MessageField onSendMessage={onSendMessage} />

@@ -27,12 +27,13 @@ describe('MessageList', () => {
     },
   ];
 
-  const renderComponent = () =>
+  const renderComponent = (props: Partial<React.ComponentProps<typeof MessageList>> = {}) =>
     render(
       <MessageList
         messages={messages}
         correspondentName={correspondentName}
         correspondentPhoto={correspondentPhoto}
+        {...props}
       />
     );
 
@@ -59,6 +60,17 @@ describe('MessageList', () => {
       for (const message of messages) {
         expect(screen.queryByText(message.content)).not.toBeInTheDocument();
       }
+    });
+  });
+
+  describe('Correspondent is typing', () => {
+    beforeEach(() => {
+      mockedUseUser.mockReturnValue({ user: TEST_USER, setUser: jest.fn() });
+      renderComponent({ isCorrespondentTyping: true });
+    });
+
+    it('shows typing message', () => {
+      expect(screen.getByLabelText(`${correspondentName} is typing…`)).toBeInTheDocument();
     });
   });
 });

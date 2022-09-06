@@ -11,12 +11,14 @@ interface MessageListProps {
   correspondentName: Profile['name'];
   correspondentPhoto: Profile['photo'];
   messages: MessageType[];
+  isCorrespondentTyping?: boolean;
 }
 
 export function MessageList({
   messages,
   correspondentName,
   correspondentPhoto,
+  isCorrespondentTyping = false,
 }: MessageListProps) {
   const { user } = useUser();
 
@@ -38,6 +40,17 @@ export function MessageList({
           {content}
         </Message>
       ))}
+      {isCorrespondentTyping && 
+        <Message
+          name={correspondentName}
+          photo={correspondentPhoto}
+          key="typing"
+          isFromUser={false}
+          aria-label={`${correspondentName} is typing…`}
+        >
+          …
+        </Message>
+      }
     </List>
   );
 }
