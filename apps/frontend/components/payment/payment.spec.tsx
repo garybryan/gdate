@@ -6,6 +6,6 @@ describe('Payment', () => {
   beforeEach(() => render(<Payment />));
 
   it('renders payment content', () => {
-    expect(screen.getByText('Payment')).toBeInTheDocument();
+    expect(screen.getByText("Don't stand up your date!!")).toBeInTheDocument();
   });
 });

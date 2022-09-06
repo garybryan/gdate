@@ -18,7 +18,7 @@ describe('SwipeInterface', () => {
 
   const profile2 = {
     ...TEST_USER,
-    name: 'Cool dude'
+    name: 'Cool dude',
   };
 
   const profileQueue = [profile1, profile2];
