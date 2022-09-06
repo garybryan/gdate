@@ -1,4 +1,6 @@
-import TEST_USER from '../../fixtures/test-user';
+import { GetServerSideProps } from 'next';
+
+import getProfileById from '../../api/get-profile-by-id/get-profile-by-id';
 
 import FakeMessenger from '../../components/fake-messenger/fake-messenger';
 
@@ -14,9 +16,11 @@ export function Messages({ correspondent: { name, photo } }: MessagesProps) {
 
 export default Messages;
 
-export async function getServerSideProps() {
-  // TODO real user based on page
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { profileId } = context.query;
+  const profile = await getProfileById(profileId as string);
+
   return {
-    props: { correspondent: TEST_USER },
+    props: { correspondent: profile } ,
   };
 }
