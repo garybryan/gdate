@@ -7,12 +7,19 @@ interface PaymentOptionProps {
   name: string;
   price: string;
   period: string;
+  bestValue?: boolean;
 }
 
-export function PaymentOption({ name, price, period }: PaymentOptionProps) {
+export function PaymentOption({
+  name,
+  price,
+  period,
+  bestValue,
+}: PaymentOptionProps) {
   return (
     <Card className={styles['container']}>
       <CardContent className={styles['content']}>
+        {bestValue && <div className={styles['bestValue']}>Best Value!</div>}
         <h3 className={styles['heading']}>{name}</h3>
         <div className={styles['price']}>${price}</div>
         <div className={styles['period']}>per {period}</div>

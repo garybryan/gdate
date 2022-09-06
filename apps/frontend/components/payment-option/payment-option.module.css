@@ -1,5 +1,5 @@
 .container {
-  --size: 13vh;
+  --size: 12vh;
   width: var(--size);
   height: var(--size);
   background-color: var(--highlight-color);
@@ -13,21 +13,33 @@
   align-items: center;
   height: 100%;
   text-align: center;
+  padding: 2vh;
 }
 
 .heading {
   color: var(--highlight-secondary-color);
-  margin: 1vh 0 1vh;
+  margin: 0.5vh 0 0.25vh;
   font-weight: 700;
-  font-size: 2.5vh;
+  font-size: 2vh;
+  line-height: 1.1;
 }
 
 .price {
   font-weight: 700;
-  font-size: 2vh;
+  font-size: 1.8vh;
 }
 
 .period {
   font-style: italic;
   font-size: 1.5vh;
+}
+
+.bestValue {
+  background-color: var(--highlight-secondary-color);
+  padding: 0.2vh 0.8vh;
+  border-radius: 0.5rem;
+  font-size: 1.25vh;
+  font-weight: bold;
+  color: var(--highlight-color);
+  margin-top: 0.5vh;
 }

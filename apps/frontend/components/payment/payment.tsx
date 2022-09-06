@@ -24,9 +24,14 @@ export function Payment() {
 
       <h3 className={styles['choose']}>Choose a membership plan:</h3>
       <div className={styles['options']}>
-        <PaymentOption name="Weekly" price="70" period="week" />
-        <PaymentOption name="Monthly" price="200" period="month" />
-        <PaymentOption name="Forever" price="1,000" period="eternity" />
+        <PaymentOption name="Weekly" price="499" period="week" />
+        <PaymentOption
+          name="Monthly"
+          price="1,499"
+          period="month"
+          bestValue={true}
+        />
+        <PaymentOption name="Forever Alone" price="499,999" period="eternity" />
       </div>
 
       <div className={styles['cardImageContainer']}>
