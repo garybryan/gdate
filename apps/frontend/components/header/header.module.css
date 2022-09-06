@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0 0 2vh;
+  margin: 0 0 1vh;
   color: var(--highlight-secondary-color);
   background-color: var(--highlight-color);
   padding-bottom: 1.75vh;
@@ -12,7 +12,7 @@
 
 .header-text {
   color: var(--highlight-secondary-color);
-  font-size: 7vh;
+  font-size: 5vh;
 }
 
 .avatarContainer {
@@ -22,7 +22,7 @@
 }
 
 .avatar {
-  --size: 9vh;
+  --size: 6vh;
   width: var(--size);
   height: var(--size);
   border: 1px solid currentColor;
