@@ -40,7 +40,7 @@ export function MessageList({
           {content}
         </Message>
       ))}
-      {isCorrespondentTyping && 
+      {isCorrespondentTyping && (
         <Message
           name={correspondentName}
           photo={correspondentPhoto}
@@ -50,7 +50,7 @@ export function MessageList({
         >
           …
         </Message>
-      }
+      )}
     </List>
   );
 }

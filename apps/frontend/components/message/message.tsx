@@ -18,10 +18,19 @@ interface MessageProps {
   ['aria-label']: string;
 }
 
-export function Message({ children, name, photo, isFromUser, 'aria-label': ariaLabel }: MessageProps) {
+export function Message({
+  children,
+  name,
+  photo,
+  isFromUser,
+  'aria-label': ariaLabel,
+}: MessageProps) {
   const senderClass = isFromUser ? 'fromUser' : 'fromCorrespondent';
   return (
-    <ListItem className={`${styles['listItem']} ${styles[senderClass]}`} aria-label={ariaLabel}>
+    <ListItem
+      className={`${styles['listItem']} ${styles[senderClass]}`}
+      aria-label={ariaLabel}
+    >
       <Avatar alt={name} src={`/profile-photos/${photo}`} />
       <MessageBubble isFromUser={isFromUser}>
         <FormattedMessageContent>{children}</FormattedMessageContent>

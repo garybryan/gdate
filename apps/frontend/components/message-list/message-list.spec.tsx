@@ -27,7 +27,9 @@ describe('MessageList', () => {
     },
   ];
 
-  const renderComponent = (props: Partial<React.ComponentProps<typeof MessageList>> = {}) =>
+  const renderComponent = (
+    props: Partial<React.ComponentProps<typeof MessageList>> = {}
+  ) =>
     render(
       <MessageList
         messages={messages}
@@ -70,7 +72,9 @@ describe('MessageList', () => {
     });
 
     it('shows typing message', () => {
-      expect(screen.getByLabelText(`${correspondentName} is typing…`)).toBeInTheDocument();
+      expect(
+        screen.getByLabelText(`${correspondentName} is typing…`)
+      ).toBeInTheDocument();
     });
   });
 });
