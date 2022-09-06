@@ -27,7 +27,7 @@ export function FakeMessenger({
   const addMessage = (message: Message) =>
     setMessages((messages) => [...messages, message]);
 
-  const { startNextGroup } = useFakeMessages(
+  const { startNextGroup, isTyping } = useFakeMessages(
     fakeMessages.messageGroups,
     addMessage
   );
@@ -44,7 +44,7 @@ export function FakeMessenger({
       content,
       isFromUser: true,
     });
-    startNextGroup();
+    setTimeout(startNextGroup, 800);
   };
 
   return (
@@ -53,6 +53,7 @@ export function FakeMessenger({
       onMessageSent={onMessageSent}
       correspondentName={correspondentName}
       correspondentPhoto={correspondentPhoto}
+      isCorrespondentTyping={isTyping}
     />
   );
 }

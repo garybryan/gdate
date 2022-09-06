@@ -32,7 +32,7 @@ export function Messenger({
           messages={messages}
           correspondentName={correspondentName}
           correspondentPhoto={correspondentPhoto}
-          isCorrespondentTyping={true}
+          isCorrespondentTyping={isCorrespondentTyping}
         />
       </div>
       <MessageField onSendMessage={onSendMessage} />
