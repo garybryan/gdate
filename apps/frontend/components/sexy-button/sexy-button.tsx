@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 
 const SexyButton = styled(Button)({
   backgroundColor: '#eb348c',
+  color: '#fff',
   fontSize: '110%',
 });
 

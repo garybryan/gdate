@@ -1,10 +1,8 @@
-import styles from './index.module.css';
+import Splash from '../components/splash/splash';
 
 export function Index() {
   return (
-    <header>
-      <h1>My site</h1>
-    </header>
+    <Splash />
   );
 }
 
