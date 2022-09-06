@@ -1,5 +1,4 @@
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 
 import FormattedMessageContent from '../formatted-message-content/formatted-message-content';
@@ -11,18 +10,20 @@ import MessageBubble from '../message-bubble/message-bubble';
 import styles from './message.module.css';
 
 interface MessageProps {
-  children: MessageType['content'];
+  children?: MessageType['content'];
   isFromUser: MessageType['isFromUser'];
   name: Profile['name'];
   photo: Profile['photo'];
-  ['aria-label']: string;
+  isTyping?: boolean;
+  ['aria-label']?: string;
 }
 
 export function Message({
-  children,
+  children = '',
   name,
   photo,
   isFromUser,
+  isTyping = false,
   'aria-label': ariaLabel,
 }: MessageProps) {
   const senderClass = isFromUser ? 'fromUser' : 'fromCorrespondent';
@@ -32,7 +33,7 @@ export function Message({
       aria-label={ariaLabel}
     >
       <Avatar alt={name} src={`/profile-photos/${photo}`} />
-      <MessageBubble isFromUser={isFromUser}>
+      <MessageBubble isFromUser={isFromUser} isTyping={isTyping}>
         <FormattedMessageContent>{children}</FormattedMessageContent>
       </MessageBubble>
     </ListItem>

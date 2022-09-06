@@ -7,6 +7,7 @@
   border-radius: 0.5rem;
   margin: 0 1rem;
   position: relative;
+  min-width: 2.5rem;
 }
 
 .container:after {
@@ -37,4 +38,27 @@
   border-left-color: var(--bubble-color);
   border-right: 0;
   margin-right: calc(var(--bubble-size) * -1 + 0.1rem);
+}
+
+.typing:before {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  content: '\2026'; /* ascii code for the ellipsis character */
+  width: 0px;
+  filter: blur(0.5px) brightness(200%);
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1rem;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1rem;
+  }
 }

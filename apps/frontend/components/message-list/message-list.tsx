@@ -46,10 +46,9 @@ export function MessageList({
           photo={correspondentPhoto}
           key="typing"
           isFromUser={false}
+          isTyping={true}
           aria-label={`${correspondentName} is typing…`}
-        >
-          …
-        </Message>
+        />
       )}
     </List>
   );
