@@ -8,4 +8,8 @@ describe('Payment', () => {
   it('renders payment content', () => {
     expect(screen.getByText("Don't stand up your date!!")).toBeInTheDocument();
   });
+
+  it('renders payment options', () => {
+    expect(screen.getByText("Option 1")).toBeInTheDocument();
+  });
 });

@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vh;
+}
+
+.content {
+  font-size: 125%;
+  text-align: center;
+}
+
+.premium {
+  color: var(--highlight-color);
+}
+
+.options {
+  margin-top: 2vh;
+}
