@@ -1,13 +1,4 @@
-.listItem {
-  padding: 1vh;
-  width: 100%;
-}
-
-.listItem.fromCorrespondent {
-  justify-content: left;
-}
-
-.listItem.fromUser {
-  flex-direction: row-reverse;
-  justify-content: right;
+.part {
+  margin-right: 0.2rem;
+  font-weight: 500;
 }

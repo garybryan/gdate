@@ -1,4 +1,5 @@
-const HIDDEN_PLACEHOLDER_PATTERN = /(\[HIDDEN:([^\]]+)\])/;
+const HIDDEN_PLACEHOLDER_PATTERN = /(\[[^\]]+ HIDDEN\])/;
+const HIDDEN_PART_PATTERN = /\[([^\]]+) HIDDEN/;
 
 import HiddenMessagePart from '../hidden-message-part/hidden-message-part';
 
@@ -7,7 +8,7 @@ interface FormattedMessageContentProps {
 }
 
 function replaceWithHiddenPart(placeholder: string): React.ReactNode {
-  const part = placeholder.match(HIDDEN_PLACEHOLDER_PATTERN)[2];
+  const part = placeholder.match(HIDDEN_PART_PATTERN)[1];
   return <HiddenMessagePart part={part} />;
 }
 

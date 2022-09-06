@@ -22,7 +22,9 @@ export function Message({ children, name, photo, isFromUser }: MessageProps) {
   return (
     <ListItem className={`${styles['listItem']} ${styles[senderClass]}`}>
       <Avatar alt={name} src={`/profile-photos/${photo}`} />
-      <MessageBubble isFromUser={isFromUser}><FormattedMessageContent>{children}</FormattedMessageContent></MessageBubble>
+      <MessageBubble isFromUser={isFromUser}>
+        <FormattedMessageContent>{children}</FormattedMessageContent>
+      </MessageBubble>
     </ListItem>
   );
 }

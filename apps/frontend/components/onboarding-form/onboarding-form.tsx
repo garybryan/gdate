@@ -25,14 +25,14 @@ const pineappleChoices = ['Love it! 🍍🍕🤤', 'No way! 🍍🍕🤮'];
 export function OnboardingForm() {
   const { push } = useRouter();
 
-  const onSubmit = (event: React.SyntheticEvent) => {
+  const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
     push('/registration');
   };
 
   return (
     <section>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
         <SingleChoiceField
           label="I'm interested in:"
           choices={interestedInChoices}
