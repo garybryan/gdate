@@ -52,10 +52,12 @@ describe('SwipeInterface', () => {
     }
   );
 
-  it('goes to message page on like', async () => {
+  it('goes to message page for profile on like', async () => {
+    const { id } = profile1;
+
     await userEvent.click(screen.getByLabelText('Like'));
 
     expect(mockPush).toHaveBeenCalledTimes(1);
-    expect(mockPush).toHaveBeenCalledWith('/messages');
+    expect(mockPush).toHaveBeenCalledWith(`/messages/${id}`);
   });
 });

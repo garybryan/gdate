@@ -24,7 +24,8 @@ export function SwipeInterface({ profileQueue }: SwipeProps) {
   };
 
   const onLike = () => {
-    push('/messages');
+    const { id } = profileQueue[currentProfileIndex];
+    push(`/messages/${id}`);
   };
 
   return (

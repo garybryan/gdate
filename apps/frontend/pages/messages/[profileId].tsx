@@ -21,6 +21,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const profile = await getProfileById(profileId as string);
 
   return {
-    props: { correspondent: profile } ,
+    props: { correspondent: profile },
   };
-}
+};
