@@ -31,6 +31,7 @@ export function MessageField({ onSendMessage }: MessageFieldProps) {
     <form onSubmit={handleSubmit}>
       <div className={styles['container']}>
         <TextField
+          autoFocus
           value={content}
           onChange={handleChange}
           className={styles['field']}
