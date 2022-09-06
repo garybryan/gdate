@@ -4,7 +4,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0 0 1vh;
   color: var(--highlight-secondary-color);
   background-color: var(--highlight-color);
   padding-bottom: 1.75vh;
