@@ -34,6 +34,7 @@ export function useFakeMessages(
       setMessageIndex((index) => index + 1);
       setTimeout(addNext, interval);
     } else {
+      setMessageIndex(0);
       setGroupIndex((index) => index + 1);
       setIsRunning(false);
     }
