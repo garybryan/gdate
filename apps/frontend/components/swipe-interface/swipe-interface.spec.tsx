@@ -60,5 +60,5 @@ describe('SwipeInterface', () => {
 
     expect(mockPush).toHaveBeenCalledTimes(1);
     expect(mockPush).toHaveBeenCalledWith('/messages');
-  })
+  });
 });

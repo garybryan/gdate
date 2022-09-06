@@ -2,6 +2,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 
+import FormattedMessageContent from '../formatted-message-content/formatted-message-content';
 import { Message as MessageType } from '../../types/messages';
 import { Profile } from '../../types/profile';
 
@@ -20,11 +21,8 @@ export function Message({ children, name, photo, isFromUser }: MessageProps) {
   const senderClass = isFromUser ? 'fromUser' : 'fromCorrespondent';
   return (
     <ListItem className={`${styles['listItem']} ${styles[senderClass]}`}>
-      <Avatar
-        alt={name}
-        src={`/profile-photos/${photo}`}
-      />
-      <MessageBubble isFromUser={isFromUser}>{children}</MessageBubble>
+      <Avatar alt={name} src={`/profile-photos/${photo}`} />
+      <MessageBubble isFromUser={isFromUser}><FormattedMessageContent>{children}</FormattedMessageContent></MessageBubble>
     </ListItem>
   );
 }

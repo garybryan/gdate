@@ -25,7 +25,7 @@ export function SwipeInterface({ profileQueue }: SwipeProps) {
 
   const onLike = () => {
     push('/messages');
-  }
+  };
 
   return (
     <div className={styles['container']}>

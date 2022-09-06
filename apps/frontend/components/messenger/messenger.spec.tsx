@@ -45,14 +45,6 @@ describe('Messenger', () => {
     );
   });
 
-  it('renders correspondent name', () => {
-    expect(
-      screen.getByRole('heading', {
-        name: `Conversation with ${correspondentName}`,
-      })
-    ).toBeInTheDocument();
-  });
-
   it('renders messages', () => {
     for (const message of messages) {
       expect(screen.getByText(message.content)).toBeInTheDocument();
