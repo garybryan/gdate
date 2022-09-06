@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 12vh;
-  height: 12vh;
+  --size: 4rem;
+  width: var(--size);
+  height: var(--size);
   border-radius: 100%;
   cursor: pointer;
   font-size: 5vh;

@@ -9,7 +9,7 @@
   margin: 0;
   left: 3vh;
   bottom: 1vh;
-  font-size: 6vh;
+  font-size: 2rem;
   color: var(--highlight-secondary-color);
   text-shadow: 2px 2px 6px var(--shadow-color),
     -2px -2px 6px var(--shadow-color), 2px -2px 6px var(--shadow-color),
