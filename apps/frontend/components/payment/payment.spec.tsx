@@ -10,6 +10,6 @@ describe('Payment', () => {
   });
 
   it('renders payment options', () => {
-    expect(screen.getByText("Option 1")).toBeInTheDocument();
+    expect(screen.getByText('Weekly')).toBeInTheDocument();
   });
 });

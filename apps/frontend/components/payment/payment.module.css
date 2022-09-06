@@ -1,8 +1,15 @@
-.container {
+.container,
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1vh;
+  gap: 1.5vh;
+}
+
+.heading {
+  margin: 1vh 0;
+  font-size: 2.8vh;
+  font-weight: 700;
 }
 
 .content {
@@ -15,5 +22,8 @@
 }
 
 .options {
-  margin-top: 2vh;
+  padding: 2vh;
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
 }
