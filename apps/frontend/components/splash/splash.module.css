@@ -5,6 +5,10 @@
   gap: 5vh;
   align-items: center;
   height: 80vh;
+  background-image: url(/_next/image?url=%2Fimages%2Fcouple.jpg&w=3840&q=75);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .button {
