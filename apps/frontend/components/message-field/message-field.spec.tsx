@@ -45,7 +45,7 @@ describe('MessageField', () => {
     expect(onSendMessage).not.toHaveBeenCalled();
   });
 
-  it("focuses input on load", async () => {
+  it('focuses input on load', async () => {
     const field = screen.getByPlaceholderText('Send a message…');
 
     expect(field).toHaveFocus();

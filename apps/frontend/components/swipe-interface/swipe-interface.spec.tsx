@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import TEST_USER from '../../fixtures/test-user';
+
 import SwipeInterface from './swipe-interface';
 
 const mockPush = jest.fn();
@@ -12,16 +14,11 @@ jest.mock('next/router', () => ({
 }));
 
 describe('SwipeInterface', () => {
-  const profile1 = {
-    name: 'Some guy',
-    photo: 'dude.jpg',
-    age: 30,
-  };
+  const profile1 = TEST_USER;
 
   const profile2 = {
-    name: 'Your dream date',
-    photo: 'nobody.jpg',
-    age: 28,
+    ...TEST_USER,
+    name: 'Cool dude'
   };
 
   const profileQueue = [profile1, profile2];

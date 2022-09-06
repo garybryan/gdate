@@ -1,5 +1,9 @@
 {
+  "id": "4440d53e-5dd9-4518-abf0-a7899efb0f1d",
   "name": "Winnie",
   "age": 28,
-  "photo": "winnie.jpg"
+  "photo": "winnie.jpg",
+  "age": 27,
+  "height": 168,
+  "income": 300
 }

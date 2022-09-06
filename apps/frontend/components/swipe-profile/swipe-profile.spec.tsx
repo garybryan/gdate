@@ -1,13 +1,11 @@
 import { render, screen } from '@testing-library/react';
 
+import TEST_USER from '../../fixtures/test-user';
+
 import SwipeProfile from './swipe-profile';
 
 describe('SwipeProfile', () => {
-  const profile = {
-    name: 'Some guy',
-    photo: 'dude.jpg',
-    age: 30,
-  };
+  const profile = TEST_USER;
 
   beforeEach(() => {
     render(<SwipeProfile {...profile} />);

@@ -1,3 +1,5 @@
+import TEST_USER from '../../fixtures/test-user';
+
 import FakeMessenger from '../../components/fake-messenger/fake-messenger';
 
 import { Profile } from '../../types/profile';
@@ -13,13 +15,8 @@ export function Messages({ correspondent: { name, photo } }: MessagesProps) {
 export default Messages;
 
 export async function getServerSideProps() {
-  // TODO real profile
-  const profile = {
-    name: 'Dinesh',
-    photo: 'dinesh.jpg',
-    age: 28,
-  };
+  // TODO real user based on page
   return {
-    props: { correspondent: profile },
+    props: { correspondent: TEST_USER },
   };
 }

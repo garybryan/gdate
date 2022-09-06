@@ -1,18 +1,15 @@
 import { render, screen } from '@testing-library/react';
 
+import TEST_USER from '../../fixtures/test-user';
+
 import SwipeQueue from './swipe-queue';
 
 describe('SwipeQueue', () => {
-  const profile1 = {
-    name: 'Some guy',
-    photo: 'dude.jpg',
-    age: 30,
-  };
+  const profile1 = TEST_USER;
 
   const profile2 = {
-    name: 'Your dream date',
-    photo: 'nobody.jpg',
-    age: 28,
+    ...TEST_USER,
+    name: 'Cool dude'
   };
 
   const profileQueue = [profile1, profile2];
