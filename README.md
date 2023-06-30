@@ -1,6 +1,48 @@
+# GDate
 
+![Screenshot of GDate](doc/screenshot.webp)
 
-# AppPres
+A fake dating app, built for a humourous presentation involving some live-coding on "How to build an app and get rich".
+
+What's been implemented:
+
+- Splash screen; "Log in" link does nothing, but "Sign up" does.
+- Registration page (although the interest selectors don't do anything).
+- See profiles and choose No or Yes (super-swipe not implemented).
+  - Choosing No goes to the next profile.
+  - Choosing Yes brings up a messaging screen with a faked conversation. Replying will trigger more fake messages.
+- A little surprise when you try to arrange a date... ;)
+
+What could be improved:
+
+- Pre-load profile images to avoid delay when swiping to next profile. (When doing the presentation, I ran through it once beforehand to ensure the images were loaded).
+- Swiping animation.
+- Design tweaks.
+- Feedback when reaching end of swipe queue and end of fake messages.
+- Unit test coverage started off well but wasn't kept up as it got closer to the deadline...
+
+## Live coding
+
+Part of the presentation was: we can't have _some loser_ show up first! That won't make a great first impression for new members. We'd like to show the _most attractive_ people first. We need... an **algorithm**!!
+
+The placeholder to implement this is in [get-profile-queue-algorithm.ts](apps/frontend/queue/get-profile-queue/get-profile-queue-algorithm.ts).
+
+## How to run locally
+
+`nx` can be installed globally for convenience:
+
+```
+npm install -g nx
+```
+
+Then install and run the project:
+
+```
+npm i
+nx serve
+```
+
+## NX default stuff
 
 This project was generated using [Nx](https://nx.dev).
 
@@ -78,8 +120,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
 
 ## ☁ Nx Cloud
 
